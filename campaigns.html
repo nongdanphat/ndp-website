@@ -1,77 +1,203 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" style="scroll-behavior: smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chiến dịch & Chương trình - NDP</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind after it's loaded
+      if (typeof tailwind !== "undefined") {
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ["Inter", "sans-serif"],
+              },
+            },
+          },
+        };
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="bg-white text-gray-900">
     <!-- Header placeholder - will be loaded dynamically -->
     <div id="header-placeholder"></div>
 
     <!-- Main Content -->
-    <main class="min-h-screen py-12">
+    <main class="min-h-screen py-12 bg-gray-100">
       <div class="container mx-auto px-4 max-w-6xl">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
           Chiến dịch & Chương trình
         </h1>
 
-        <div class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Campaign Item 1 -->
-          <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition shadow-md">
-            <div class="md:flex">
-              <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
-                <img
-                  src="/assets/images/new-approach-1.jpg"
-                  alt="Chương trình hỗ trợ nông dân"
-                  class="w-full h-full object-cover"
-                />
+          <div
+            class="bg-white rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full"
+          >
+            <!-- Image Section -->
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="/assets/images/new-approach-1.jpg"
+                alt="Chương trình hỗ trợ nông dân ứng dụng công nghệ"
+                class="w-full h-full object-cover"
+              />
+              <!-- Black Overlay -->
+              <div class="absolute inset-0 bg-black/60"></div>
+
+              <!-- Content on Image -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-6 text-white"
+              >
+                <div class="flex justify-between items-start">
+                  <span
+                    class="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-green-500 text-white"
+                  >
+                    Đang diễn ra
+                  </span>
+                </div>
+                <div class="flex flex-col gap-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span>Bắt đầu: <strong>01/03/2026</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span>Kết thúc: <strong>30/06/2026</strong></span>
+                  </div>
+                </div>
               </div>
-              <div class="md:w-2/3 p-6">
-                <span class="text-sm text-gray-500">Đang diễn ra</span>
-                <h2 class="text-2xl font-semibold mt-2 mb-4">Chương trình hỗ trợ nông dân ứng dụng công nghệ</h2>
-                <p class="text-gray-600 mb-4">Chương trình hỗ trợ nông dân tiếp cận và áp dụng các công nghệ nông nghiệp hiện đại, giúp nâng cao năng suất và chất lượng sản phẩm nông nghiệp. Chương trình bao gồm đào tạo, tư vấn kỹ thuật và hỗ trợ tài chính.</p>
-                <a href="#" class="text-[#AB7E31] hover:text-[#BE8F2B] font-medium inline-block">Tìm hiểu thêm →</a>
-              </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-6 md:p-8 flex flex-col flex-grow">
+              <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                Chương trình hỗ trợ nông dân ứng dụng công nghệ
+              </h2>
+              <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                Chương trình hỗ trợ nông dân tiếp cận và áp dụng các công cụ,
+                quy trình và công nghệ nông nghiệp phù hợp với điều kiện sản
+                xuất thực tế. Mục tiêu là giúp nâng cao hiệu quả làm nông mà
+                không làm phức tạp thêm công việc hằng ngày.
+              </p>
+              <a
+                href="https://nongdanphat.github.io/ndp-campaigns/tet2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-6 py-3 rounded-3xl font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-center"
+              >
+                Đăng ký tham gia
+              </a>
             </div>
           </div>
 
           <!-- Campaign Item 2 -->
-          <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition shadow-md">
-            <div class="md:flex">
-              <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
-                <img
-                  src="/assets/images/new-approach-2.jpg"
-                  alt="Chiến dịch phát triển nông nghiệp bền vững"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="md:w-2/3 p-6">
-                <span class="text-sm text-gray-500">Sắp diễn ra</span>
-                <h2 class="text-2xl font-semibold mt-2 mb-4">Chiến dịch phát triển nông nghiệp bền vững</h2>
-                <p class="text-gray-600 mb-4">Chiến dịch tập trung vào việc thúc đẩy các phương pháp canh tác bền vững, bảo vệ môi trường và nâng cao chất lượng cuộc sống cho nông dân. Tham gia cùng chúng tôi để xây dựng một tương lai nông nghiệp xanh.</p>
-                <a href="#" class="text-[#AB7E31] hover:text-[#BE8F2B] font-medium inline-block">Tìm hiểu thêm →</a>
+          <div
+            class="bg-white rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full"
+          >
+            <!-- Image Section -->
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="/assets/images/new-approach-2.jpg"
+                alt="Chiến dịch phát triển nông nghiệp bền vững"
+                class="w-full h-full object-cover"
+              />
+              <!-- Black Overlay -->
+              <div class="absolute inset-0 bg-black/60"></div>
+
+              <!-- Content on Image -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-6 text-white"
+              >
+                <div class="flex justify-between items-start">
+                  <span
+                    class="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-orange-500 text-white"
+                  >
+                    Sắp kết thúc
+                  </span>
+                </div>
+                <div class="flex flex-col gap-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span>Bắt đầu: <strong>15/01/2026</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span>Kết thúc: <strong>15/04/2026</strong></span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Campaign Item 3 -->
-          <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition shadow-md">
-            <div class="md:flex">
-              <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
-                <img
-                  src="/assets/images/new-approach-3.jpg"
-                  alt="Chương trình đào tạo kỹ năng nông nghiệp"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="md:w-2/3 p-6">
-                <span class="text-sm text-gray-500">Đang diễn ra</span>
-                <h2 class="text-2xl font-semibold mt-2 mb-4">Chương trình đào tạo kỹ năng nông nghiệp</h2>
-                <p class="text-gray-600 mb-4">Các khóa đào tạo chuyên sâu về kỹ thuật canh tác, quản lý trang trại và ứng dụng công nghệ trong nông nghiệp. Chương trình dành cho nông dân, sinh viên và những người quan tâm đến nông nghiệp.</p>
-                <a href="#" class="text-[#AB7E31] hover:text-[#BE8F2B] font-medium inline-block">Tìm hiểu thêm →</a>
-              </div>
+            <!-- Content Section -->
+            <div class="p-6 md:p-8 flex flex-col flex-grow">
+              <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                Chiến dịch phát triển nông nghiệp bền vững
+              </h2>
+              <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                Chiến dịch tập trung thúc đẩy các phương pháp canh tác bền vững,
+                giảm tác động đến môi trường và nâng cao chất lượng cuộc sống
+                cho nông dân. Chương trình được triển khai theo từng địa phương,
+                dựa trên nhu cầu thực tế.
+              </p>
+              <a
+                href="https://nongdanphat.github.io/ndp-campaigns/tet2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-6 py-3 rounded-3xl font-medium transition-all duration-300 ease-in-out transform hover:scale-105 text-center"
+              >
+                Đăng ký tham gia
+              </a>
             </div>
           </div>
         </div>
@@ -85,4 +211,3 @@
     <script src="/load-header-footer.js"></script>
   </body>
 </html>
-
