@@ -11,12 +11,24 @@ function getBasePath() {
   const pathParts = parts.filter(p => !p.endsWith('.html'));
   
   // If we're at root (no path parts), return './'
-  // Otherwise, go up one level for each directory
+  // If we have only 1 part (repo name like 'ndp-website'), we're at repo root, return './'
+  // Otherwise, go up one level for each directory (excluding repo name)
   if (pathParts.length === 0) {
     return './';
   }
-  const relativePath = '../'.repeat(pathParts.length);
-  return relativePath;
+  
+  // Check if we're at repo root (only repo name in path)
+  // For GitHub Pages with repo name, if pathParts.length === 1, we're at root
+  // For subdirectories, pathParts.length will be > 1 (repo name + subdirs)
+  if (pathParts.length === 1) {
+    // At repo root (e.g., /ndp-website/), return './'
+    return './';
+  }
+  
+  // In subdirectory: count directories excluding repo name
+  // pathParts[0] is repo name, pathParts[1+] are subdirectories
+  const subdirCount = pathParts.length - 1;
+  return '../'.repeat(subdirCount);
 }
 
 // Add styles.css link if not already present
@@ -276,45 +288,65 @@ function updateHeaderLinks(headerElement) {
   });
 }
 
-// Load header and footer dynamically
-document.addEventListener('DOMContentLoaded', function() {
-  // Load header
-  const headerPath = getBasePath() + 'header.html';
-  fetch(headerPath)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to load header: ${response.status} ${response.statusText}`);
-      }
-      return response.text();
-    })
-    .then(data => {
-      const placeholder = document.getElementById('header-placeholder');
-      if (placeholder) {
+// Helper function to load header with fallback
+function loadHeader() {
+  const placeholder = document.getElementById('header-placeholder');
+  if (!placeholder) {
+    console.error('Header placeholder not found');
+    return;
+  }
+  
+  const basePath = getBasePath();
+  const headerPath = basePath + 'header.html';
+  
+  function tryLoadHeader(path, attempt = 1) {
+    fetch(path)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load header: ${response.status} ${response.statusText}`);
+        }
+        return response.text();
+      })
+      .then(data => {
         placeholder.innerHTML = data;
         updateHeaderLinks(placeholder);
         initMobileMenu();
         highlightActiveMenuItem();
-      }
-    })
-    .catch(error => {
-      console.error('Error loading header from', headerPath, ':', error);
-      // Try alternative path if root path fails
-      const altPath = './header.html';
-      if (headerPath !== altPath) {
-        fetch(altPath)
-          .then(response => response.text())
-          .then(data => {
-            const placeholder = document.getElementById('header-placeholder');
-            if (placeholder) {
-              placeholder.innerHTML = data;
-              updateHeaderLinks(placeholder);
-              initMobileMenu();
-              highlightActiveMenuItem();
-            }
-          })
-          .catch(err => console.error('Error loading header from alternative path:', err));
-      }
-    });
+      })
+      .catch(error => {
+        console.error(`Error loading header from ${path} (attempt ${attempt}):`, error);
+        
+        // Try alternative paths
+        const altPaths = [
+          './header.html',
+          'header.html',
+          '../header.html'
+        ];
+        
+        if (attempt <= altPaths.length) {
+          const altPath = altPaths[attempt - 1];
+          if (altPath !== path) {
+            tryLoadHeader(altPath, attempt + 1);
+          } else if (attempt < altPaths.length) {
+            tryLoadHeader(altPaths[attempt], attempt + 1);
+          }
+        } else {
+          console.error('All attempts to load header failed');
+        }
+      });
+  }
+  
+  tryLoadHeader(headerPath);
+}
+
+// Load header and footer dynamically
+document.addEventListener('DOMContentLoaded', function() {
+  // Load header
+  loadHeader();
+
+  // Load footer - create with JavaScript
+  loadFooter();
+});
 
   // Load footer - create with JavaScript
   loadFooter();
