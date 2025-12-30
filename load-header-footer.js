@@ -6,10 +6,17 @@
 function getBasePath() {
   const path = window.location.pathname;
   // Remove filename and leading slash, filter out empty strings and HTML files
-  const pathParts = path.split('/').filter(p => p && !p.endsWith('.html'));
+  // Split by '/' and filter out empty strings and HTML files
+  const parts = path.split('/').filter(p => p);
+  const pathParts = parts.filter(p => !p.endsWith('.html'));
+  
   // If we're at root (no path parts), return './'
   // Otherwise, go up one level for each directory
-  return pathParts.length > 0 ? '../'.repeat(pathParts.length) : './';
+  if (pathParts.length === 0) {
+    return './';
+  }
+  const relativePath = '../'.repeat(pathParts.length);
+  return relativePath;
 }
 
 // Add styles.css link if not already present
@@ -173,10 +180,39 @@ function loadFooter() {
 
   footerPlaceholder.innerHTML = footerHTML;
 
-  // Process social media links
+  // Update image paths in footer after insertion to ensure they're correct
   setTimeout(() => {
     const footer = footerPlaceholder.querySelector('footer');
     if (footer) {
+      // Fix image paths that might not have been evaluated correctly
+      const images = footer.querySelectorAll('img[src*="assets/icons"], img[src*="icons"]');
+      images.forEach(img => {
+        const currentSrc = img.getAttribute('src');
+        // Check if src needs fixing (contains template string or is malformed)
+        if (currentSrc) {
+          let needsFix = false;
+          let iconName = '';
+          
+          if (currentSrc.includes('${basePath}')) {
+            // Template string wasn't evaluated
+            needsFix = true;
+            iconName = currentSrc.split('assets/icons/').pop() || currentSrc.split('/').pop();
+          } else if (!currentSrc.startsWith('http') && !currentSrc.startsWith('../') && !currentSrc.startsWith('./') && currentSrc.includes('assets/icons')) {
+            // Path exists but might be wrong
+            iconName = currentSrc.split('assets/icons/').pop();
+            if (iconName) needsFix = true;
+          } else if (currentSrc.includes('icons/') && !currentSrc.startsWith('../') && !currentSrc.startsWith('./')) {
+            // Just icon name or partial path
+            iconName = currentSrc.split('icons/').pop() || currentSrc.split('/').pop();
+            needsFix = true;
+          }
+          
+          if (needsFix && iconName) {
+            img.setAttribute('src', basePath + 'assets/icons/' + iconName);
+          }
+        }
+      });
+      
       const socialSection = footer.querySelector('.social-media-section');
       if (socialSection) {
         processSocialMediaLinks(socialSection);
@@ -243,16 +279,42 @@ function updateHeaderLinks(headerElement) {
 // Load header and footer dynamically
 document.addEventListener('DOMContentLoaded', function() {
   // Load header
-  fetch(getBasePath() + 'header.html')
-    .then(response => response.text())
+  const headerPath = getBasePath() + 'header.html';
+  fetch(headerPath)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load header: ${response.status} ${response.statusText}`);
+      }
+      return response.text();
+    })
     .then(data => {
       const placeholder = document.getElementById('header-placeholder');
-      placeholder.innerHTML = data;
-      updateHeaderLinks(placeholder);
-      initMobileMenu();
-      highlightActiveMenuItem();
+      if (placeholder) {
+        placeholder.innerHTML = data;
+        updateHeaderLinks(placeholder);
+        initMobileMenu();
+        highlightActiveMenuItem();
+      }
     })
-    .catch(error => console.error('Error loading header:', error));
+    .catch(error => {
+      console.error('Error loading header from', headerPath, ':', error);
+      // Try alternative path if root path fails
+      const altPath = './header.html';
+      if (headerPath !== altPath) {
+        fetch(altPath)
+          .then(response => response.text())
+          .then(data => {
+            const placeholder = document.getElementById('header-placeholder');
+            if (placeholder) {
+              placeholder.innerHTML = data;
+              updateHeaderLinks(placeholder);
+              initMobileMenu();
+              highlightActiveMenuItem();
+            }
+          })
+          .catch(err => console.error('Error loading header from alternative path:', err));
+      }
+    });
 
   // Load footer - create with JavaScript
   loadFooter();
