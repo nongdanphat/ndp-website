@@ -2,11 +2,22 @@
 // This ensures fonts are available for all pages that load this script
 // Fonts are now self-hosted in /assets/fonts/ to avoid FOUT (Flash of Unstyled Text)
 
+// Helper function to get base path based on current location
+function getBasePath() {
+  const path = window.location.pathname;
+  // Remove filename and leading slash, filter out empty strings and HTML files
+  const pathParts = path.split('/').filter(p => p && !p.endsWith('.html'));
+  // If we're at root (no path parts), return './'
+  // Otherwise, go up one level for each directory
+  return pathParts.length > 0 ? '../'.repeat(pathParts.length) : './';
+}
+
 // Add styles.css link if not already present
-if (!document.querySelector('link[href="/styles.css"]')) {
+
+if (!document.querySelector('link[href*="styles.css"]')) {
   const styleLink = document.createElement('link');
   styleLink.rel = 'stylesheet';
-  styleLink.href = '/styles.css';
+  styleLink.href = getBasePath() + 'styles.css';
   document.head.appendChild(styleLink);
 }
 
@@ -88,6 +99,7 @@ function loadFooter() {
   }
 
   // Create footer HTML
+  const basePath = getBasePath();
   const footerHTML = `
     <footer class="border-t border-gray-200 bg-white py-12 md:py-16">
       <div class="container mx-auto px-4">
@@ -139,13 +151,13 @@ function loadFooter() {
             </h3>
             <div class="flex gap-4 items-center flex-wrap" style="display: flex; gap: 1rem; align-items: center">
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="Facebook" title="Facebook" style="display: inline-block">
-                <img src="/assets/icons/fb.webp" alt="Facebook" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="${basePath}assets/icons/fb.webp" alt="Facebook" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="Instagram" title="Instagram" style="display: inline-block">
-                <img src="/assets/icons/ig.webp" alt="Instagram" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="${basePath}assets/icons/ig.webp" alt="Instagram" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="YouTube" title="YouTube" style="display: inline-block">
-                <img src="/assets/icons/youtube.png" alt="YouTube" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="${basePath}assets/icons/youtube.png" alt="YouTube" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
             </div>
           </div>
@@ -173,13 +185,70 @@ function loadFooter() {
   }, 50);
 }
 
+// Helper function to update header links to be relative to current page
+function updateHeaderLinks(headerElement) {
+  const basePath = getBasePath();
+  const currentPath = window.location.pathname;
+  const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+  
+  const links = headerElement.querySelectorAll('a[href]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      // If href is already relative (starts with ../ or ./), keep it
+      if (href.startsWith('../') || href.startsWith('./')) {
+        return;
+      }
+      
+      // Map standard paths to relative paths based on current location
+      let targetPath = href;
+      
+      // Handle paths like "insights/index.html" - need to check if we're already in that directory
+      if (href === 'index.html') {
+        // If we're in a subdirectory, go up; if at root, stay
+        link.setAttribute('href', basePath + 'index.html');
+      } else if (href === 'insights/index.html') {
+        // If we're in insights/, use './index.html', otherwise use '../insights/index.html' or './insights/index.html'
+        if (currentPath.includes('/insights/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'insights/index.html');
+        }
+      } else if (href === 'campaigns/index.html') {
+        if (currentPath.includes('/campaigns/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'campaigns/index.html');
+        }
+      } else if (href === 'join-us/index.html') {
+        if (currentPath.includes('/join-us/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'join-us/index.html');
+        }
+      } else if (href === 'contact/index.html') {
+        if (currentPath.includes('/contact/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'contact/index.html');
+        }
+      } else {
+        // For any other path, make it relative to base
+        link.setAttribute('href', basePath + href.replace(/^\//, ''));
+      }
+    }
+  });
+}
+
 // Load header and footer dynamically
 document.addEventListener('DOMContentLoaded', function() {
   // Load header
-  fetch('/header.html')
+  fetch(getBasePath() + 'header.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
+      const placeholder = document.getElementById('header-placeholder');
+      placeholder.innerHTML = data;
+      updateHeaderLinks(placeholder);
       initMobileMenu();
       highlightActiveMenuItem();
     })
