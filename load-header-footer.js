@@ -348,10 +348,6 @@ document.addEventListener('DOMContentLoaded', function() {
   loadFooter();
 });
 
-  // Load footer - create with JavaScript
-  loadFooter();
-});
-
 // Process social media links to ensure they open in new tab
 function processSocialMediaLinks(socialSection) {
   // Use setTimeout to ensure this runs after all other scripts
