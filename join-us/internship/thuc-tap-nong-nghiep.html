@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực tập Nông nghiệp - NDP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Header placeholder - will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen py-12 bg-gray-100">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="mb-6">
+          <a
+            href="index.html"
+            class="text-[#AB7E31] hover:text-[#BE8F2B] mb-4 inline-flex items-center"
+          >
+            < Quay lại
+          </a>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-3xl p-8 shadow-md mb-6"
+        >
+          <div class="flex flex-col gap-4 mb-6">
+            <div>
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Thực tập Nông nghiệp
+              </h1>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                Khu vực sản xuất (linh hoạt)
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium border border-green-200"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Toàn thời gian / Bán thời gian
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-medium border border-amber-200"
+              >
+                Giai đoạn sớm
+              </span>
+            </div>
+          </div>
+
+          <div class="prose max-w-none">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">
+              Mô tả chung
+            </h2>
+            <p class="text-gray-700 mb-6 text-base leading-relaxed">
+              Vị trí dành cho những người muốn trải nghiệm môi trường sản xuất
+              nông nghiệp thực tế, học nghề từ hiện trường và con người.
+            </p>
+
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 mt-8">
+              Nội dung trải nghiệm
+            </h2>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Tham gia hỗ trợ các hoạt động sản xuất nông nghiệp tại hiện
+                  trường</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Quan sát và học cách vận hành trong từng giai đoạn sản
+                  xuất</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Hỗ trợ công việc hằng ngày cùng nông dân và đội ngũ</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Hiểu chuỗi giá trị nông nghiệp từ sản xuất đến tiêu thụ</span
+                >
+              </li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 mt-8">
+              Phù hợp với ai
+            </h2>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Sinh viên ngành nông nghiệp hoặc người quan tâm đến sản xuất
+                  nông nghiệp</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Muốn học nghề từ thực tế, không ngại công việc ngoài hiện
+                  trường</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 text-base"
+                  >Có tinh thần học hỏi và tôn trọng công việc sản xuất</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <a
+              href="../../apply/index.html"
+              onclick="sessionStorage.setItem('jobPosition', 'Thực tập Nông nghiệp'); sessionStorage.setItem('jobDetailUrl', window.location.href);"
+              class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition"
+            >
+              Ứng tuyển ngay
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer placeholder - will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load header and footer -->
+    <script src="../../load-header-footer.js"></script>
+  </body>
+</html>

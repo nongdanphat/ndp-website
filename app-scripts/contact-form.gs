@@ -3,11 +3,11 @@
  * Ghi dữ liệu liên hệ vào Google Sheet
  *
  * HƯỚNG DẪN SETUP:
- * 1. Tạo Google Sheet mới với các cột: Timestamp, Họ tên, Email, Số điện thoại, Tin nhắn
+ * 1. Tạo Google Sheet mới với các cột: Timestamp, Họ tên, Email, Số điện thoại, Nội dung liên hệ, Nội dung ý kiến
  * 2. Lấy Sheet ID từ URL (phần giữa /d/ và /edit)
  * 3. Thay YOUR_GOOGLE_SHEET_ID trong code
  * 4. Deploy as Web App với quyền "Anyone" và "Execute as me"
- * 5. Copy Web App URL và thay vào lien-he.html
+ * 5. Copy Web App URL và thay vào các file HTML
  */
 
 // ============================================
@@ -47,6 +47,7 @@ function doPost(e) {
         email: e.parameter.email || "",
         phone: e.parameter.phone || "",
         message: e.parameter.message || "",
+        formType: e.parameter.formType || "contact", // Mặc định là "contact"
       };
     } else {
       throw new Error("Không có dữ liệu được gửi");
@@ -71,12 +72,25 @@ function doPost(e) {
 
 /**
  * Hàm saveContact ghi dữ liệu liên hệ vào Google Sheet
- * @param {Object} data - Dữ liệu form { name, email, phone, message }
+ * @param {Object} data - Dữ liệu form { name, email, phone, message, formType }
  * @returns {Object} Kết quả { success: true/false }
  */
 function saveContact(data) {
   try {
     const sheet = SpreadsheetApp.openById(sheetId).getActiveSheet();
+
+    // Xác định formType (mặc định là "contact")
+    const formType = (data.formType || "contact").toLowerCase();
+
+    // Phân biệt nội dung theo loại form
+    let contactContent = ""; // Cột 5: Nội dung liên hệ
+    let feedbackContent = ""; // Cột 6: Nội dung ý kiến
+
+    if (formType === "insights") {
+      feedbackContent = data.message || "";
+    } else {
+      contactContent = data.message || "";
+    }
 
     // Ghi vào Google Sheet
     const timestamp = new Date();
@@ -85,7 +99,8 @@ function saveContact(data) {
       data.name || "",
       data.email || "",
       data.phone || "",
-      data.message || "",
+      contactContent, // Cột 5: Nội dung liên hệ
+      feedbackContent, // Cột 6: Nội dung ý kiến
     ];
 
     // Thêm row
@@ -108,4 +123,3 @@ function saveContact(data) {
     return { success: false, error: error.toString() };
   }
 }
-

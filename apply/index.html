@@ -51,336 +51,340 @@
       }
     </style>
   </head>
-  <body class="bg-white text-gray-900">
+  <body class="bg-gray-100 text-gray-900">
     <!-- Header placeholder - will be loaded dynamically -->
     <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main class="min-h-screen py-12">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="grid lg:grid-cols-2 gap-8 items-start">
-          <!-- Left: Illustration -->
-          <div class="hidden lg:block">
-            <div
-              class="bg-gradient-to-br from-[#FADC7C] to-white rounded-xl p-8 shadow-md sticky top-24"
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Left: Content -->
+          <div class="pt-8">
+            <h1
+              class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
             >
-              <div class="aspect-square rounded-xl overflow-hidden">
-                <img
-                  src="../assets/images/ung-tuyen.jpg"
-                  alt="Ứng tuyển công việc"
-                  class="w-full h-full object-cover rounded-xl"
-                />
+              Ứng tuyển cùng <span class="text-[#AB7E31]">Nông Dân Phát</span>
+            </h1>
+            <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+              Điền thông tin ứng tuyển để chúng ta có cơ hội trao đổi và hiểu
+              nhau rõ hơn. Rất vui được kết nối cùng bạn.
+            </p>
+            <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+              Nếu bạn chưa tiện điền form, bạn cũng có thể gửi thông tin ứng
+              tuyển trực tiếp qua email.
+            </p>
+            <div class="space-y-6">
+              <div>
+                <p class="text-sm text-gray-600 mb-1">Email:</p>
+                <p class="text-base font-bold text-gray-900">
+                  tuyendung@nongdanphat.vn
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Right: Form -->
-          <div>
-            <div
-              class="bg-white border border-gray-200 rounded-xl p-8 shadow-md"
-            >
-              <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ứng tuyển công việc
-              </h1>
+          <div class="bg-white p-8 rounded-3xl">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Ứng tuyển công việc
+            </h1>
 
-              <form id="application-form" class="space-y-6">
-                <!-- Họ và tên -->
-                <div>
-                  <label
-                    for="fullName"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Họ và tên <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
+            <form id="application-form" class="space-y-4">
+              <!-- Họ và tên -->
+              <div>
+                <label
+                  for="fullName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Họ và tên <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent"
+                  placeholder="Nhập họ và tên của bạn"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Email <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent"
+                  placeholder="example@email.com"
+                />
+              </div>
+
+              <!-- Số điện thoại -->
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Số điện thoại <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent"
+                  placeholder="0123456789"
+                />
+              </div>
+
+              <!-- Nơi mong muốn làm việc -->
+              <div>
+                <label
+                  for="location"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Nơi mong muốn làm việc <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent"
+                  placeholder="Ví dụ: TP. Hồ Chí Minh, Đồng bằng sông Cửu Long"
+                />
+              </div>
+
+              <!-- Công việc / Vị trí -->
+              <div>
+                <label
+                  for="position"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Công việc / Vị trí <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="position"
+                  name="position"
+                  required
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-3xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent"
+                  placeholder="Vị trí công việc"
+                />
+              </div>
+
+              <!-- Kinh nghiệm -->
+              <div>
+                <label
+                  for="experience"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Kinh nghiệm <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <!-- Hidden select for form submission -->
+                  <select
+                    id="experience"
+                    name="experience"
                     required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition"
-                    placeholder="Nhập họ và tên của bạn"
-                  />
-                </div>
-
-                <!-- Email -->
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 mb-2"
+                    class="hidden"
                   >
-                    Email <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition"
-                    placeholder="example@email.com"
-                  />
-                </div>
+                    <option value="">-- Chọn kinh nghiệm --</option>
+                    <option value="Đã có kinh nghiệm">Đã có kinh nghiệm</option>
+                    <option value="Mới ra trường">Mới ra trường</option>
+                    <option value="Thực tập">Thực tập</option>
+                  </select>
 
-                <!-- Số điện thoại -->
-                <div>
-                  <label
-                    for="phone"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Số điện thoại <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    inputmode="numeric"
-                    pattern="[0-9]*"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition"
-                    placeholder="0123456789"
-                  />
-                </div>
-
-                <!-- Nơi mong muốn làm việc -->
-                <div>
-                  <label
-                    for="location"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Nơi mong muốn làm việc <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition"
-                    placeholder="Ví dụ: TP. Hồ Chí Minh, Đồng bằng sông Cửu Long"
-                  />
-                </div>
-
-                <!-- Công việc / Vị trí -->
-                <div>
-                  <label
-                    for="position"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Công việc / Vị trí <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="position"
-                    name="position"
-                    required
-                    readonly
-                    class="w-full px-4 py-3 border border-gray-300 rounded-xl bg-gray-50 focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition"
-                    placeholder="Vị trí công việc"
-                  />
-                </div>
-
-                <!-- Kinh nghiệm -->
-                <div>
-                  <label
-                    for="experience"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Kinh nghiệm <span class="text-red-500">*</span>
-                  </label>
-                  <div class="relative">
-                    <!-- Hidden select for form submission -->
-                    <select
-                      id="experience"
-                      name="experience"
-                      required
-                      class="hidden"
-                    >
-                      <option value="">-- Chọn kinh nghiệm --</option>
-                      <option value="Đã có kinh nghiệm">
-                        Đã có kinh nghiệm
-                      </option>
-                      <option value="Mới ra trường">Mới ra trường</option>
-                      <option value="Thực tập">Thực tập</option>
-                    </select>
-
-                    <!-- Custom Dropdown -->
-                    <div id="experience-dropdown" class="relative w-full">
-                      <button
-                        type="button"
-                        id="experience-button"
-                        class="w-full px-4 py-3.5 text-left border border-gray-300 rounded-xl bg-white hover:border-[#AB7E31] focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent outline-none transition flex items-center justify-between"
-                      >
-                        <span id="experience-selected" class="text-gray-700">
-                          -- Chọn kinh nghiệm --
-                        </span>
-                        <svg
-                          id="experience-arrow"
-                          class="w-5 h-5 text-[#AB7E31] transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M19 9l-7 7-7-7"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <!-- Dropdown Panel -->
-                      <div
-                        id="experience-panel"
-                        class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden"
-                      >
-                        <div
-                          class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
-                          data-value=""
-                        >
-                          -- Chọn kinh nghiệm --
-                        </div>
-                        <div
-                          class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
-                          data-value="Đã có kinh nghiệm"
-                        >
-                          Đã có kinh nghiệm
-                        </div>
-                        <div
-                          class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
-                          data-value="Mới ra trường"
-                        >
-                          Mới ra trường
-                        </div>
-                        <div
-                          class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
-                          data-value="Thực tập"
-                        >
-                          Thực tập
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Tải CV -->
-                <div>
-                  <label
-                    for="cvFile"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Tải CV
-                    <span class="text-gray-500 text-xs">(Không bắt buộc)</span>
-                  </label>
-                  <div class="flex items-center gap-4">
-                    <input
-                      type="file"
-                      id="cvFile"
-                      name="cvFile"
-                      accept=".pdf,.doc,.docx,.png,.jpg,.zip"
-                      class="hidden"
-                    />
+                  <!-- Custom Dropdown -->
+                  <div id="experience-dropdown" class="relative w-full">
                     <button
                       type="button"
-                      id="cvFileButton"
-                      class="px-6 py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-[#AB7E31] hover:text-[#AB7E31] transition cursor-pointer"
+                      id="experience-button"
+                      class="w-full px-4 py-2 text-left border border-gray-300 rounded-3xl bg-white hover:border-[#AB7E31] focus:outline-none focus:ring-2 focus:ring-[#AB7E31] focus:border-transparent flex items-center justify-between"
                     >
-                      Chọn file CV
-                    </button>
-                    <span id="cvFileName" class="text-sm text-gray-500"></span>
-                  </div>
-                  <p class="text-xs text-gray-500 mt-2">
-                    Chấp nhận: PDF, DOC, DOCX, PNG, JPG, ZIP. Dung lượng tối đa:
-                    5MB
-                  </p>
-                </div>
-
-                <!-- Checkbox xác nhận -->
-                <div class="flex items-start">
-                  <label for="policy" class="flex items-start cursor-pointer">
-                    <div class="relative mt-0.5">
-                      <input
-                        type="checkbox"
-                        id="policy"
-                        name="policy"
-                        checked
-                        required
-                        class="sr-only"
-                      />
-                      <div
-                        id="checkbox-custom"
-                        class="w-5 h-5 border-2 border-gray-300 rounded bg-white transition-all duration-200 flex items-center justify-center hover:border-[#AB7E31] cursor-pointer relative"
+                      <span id="experience-selected" class="text-gray-700">
+                        -- Chọn kinh nghiệm --
+                      </span>
+                      <svg
+                        id="experience-arrow"
+                        class="w-5 h-5 text-[#AB7E31] transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          id="checkbox-checkmark"
-                          class="w-3.5 h-3.5 text-white absolute transition-opacity duration-200"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          style="opacity: 0; display: none"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3.5"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- Dropdown Panel -->
+                    <div
+                      id="experience-panel"
+                      class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-3xl shadow-lg overflow-hidden"
+                    >
+                      <div
+                        class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
+                        data-value=""
+                      >
+                        -- Chọn kinh nghiệm --
+                      </div>
+                      <div
+                        class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
+                        data-value="Đã có kinh nghiệm"
+                      >
+                        Đã có kinh nghiệm
+                      </div>
+                      <div
+                        class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
+                        data-value="Mới ra trường"
+                      >
+                        Mới ra trường
+                      </div>
+                      <div
+                        class="experience-option px-5 py-3.5 text-gray-700 hover:bg-[#FADC7C] cursor-pointer transition-colors"
+                        data-value="Thực tập"
+                      >
+                        Thực tập
                       </div>
                     </div>
-                    <span class="ml-2 text-sm text-gray-700">
-                      Tôi xác nhận đã đọc và đồng ý với chính sách bảo mật và
-                      điều khoản sử dụng
-                      <span class="text-red-500">*</span>
-                    </span>
-                  </label>
-                </div>
-
-                <!-- Nút Gửi -->
-                <div>
-                  <button
-                    type="submit"
-                    id="submitButton"
-                    class="w-full bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Gửi đơn ứng tuyển
-                  </button>
-                </div>
-
-                <div id="message" class="hidden mt-4 p-4 rounded-xl"></div>
-              </form>
-
-              <!-- Success Message (ẩn ban đầu) -->
-              <div id="success-message" class="hidden">
-                <div class="text-center py-12">
-                  <div class="mb-6">
-                    <svg
-                      class="w-20 h-20 mx-auto text-green-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
                   </div>
-                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                    Đơn ứng tuyển đã được gửi thành công!
-                  </h2>
-                  <p class="text-lg text-gray-600 mb-8">
-                    Chúng tôi đã nhận được đơn ứng tuyển của bạn. Chúng tôi sẽ
-                    liên hệ với bạn sớm nhất có thể.
-                  </p>
-                  <a
-                    id="back-to-job-button"
-                    href="#"
-                    class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition"
-                  >
-                    Trở về trang chi tiết việc làm
-                  </a>
                 </div>
+              </div>
+
+              <!-- Tải CV -->
+              <div>
+                <label
+                  for="cvFile"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Tải CV
+                  <span class="text-gray-500 text-xs">(Không bắt buộc)</span>
+                </label>
+                <div class="flex items-center gap-4">
+                  <input
+                    type="file"
+                    id="cvFile"
+                    name="cvFile"
+                    accept=".pdf,.doc,.docx,.png,.jpg,.zip"
+                    class="hidden"
+                  />
+                  <button
+                    type="button"
+                    id="cvFileButton"
+                    class="px-6 py-3 border-2 border-dashed border-gray-300 rounded-3xl text-gray-600 hover:border-[#AB7E31] hover:text-[#AB7E31] transition cursor-pointer"
+                  >
+                    Chọn file CV
+                  </button>
+                  <span id="cvFileName" class="text-sm text-gray-500"></span>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">
+                  Chấp nhận: PDF, DOC, DOCX, PNG, JPG, ZIP. Dung lượng tối đa:
+                  5MB
+                </p>
+              </div>
+
+              <!-- Checkbox xác nhận -->
+              <div class="flex items-start">
+                <label for="policy" class="flex items-start cursor-pointer">
+                  <div class="relative mt-0.5">
+                    <input
+                      type="checkbox"
+                      id="policy"
+                      name="policy"
+                      checked
+                      required
+                      class="sr-only"
+                    />
+                    <div
+                      id="checkbox-custom"
+                      class="w-5 h-5 border-2 border-gray-300 rounded bg-white transition-all duration-200 flex items-center justify-center hover:border-[#AB7E31] cursor-pointer relative"
+                    >
+                      <svg
+                        id="checkbox-checkmark"
+                        class="w-3.5 h-3.5 text-white absolute transition-opacity duration-200"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        style="opacity: 0; display: none"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="3.5"
+                          d="M5 13l4 4L19 7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="ml-2 text-sm text-gray-700">
+                    Tôi xác nhận đã đọc và đồng ý với chính sách bảo mật và điều
+                    khoản sử dụng
+                    <span class="text-red-500">*</span>
+                  </span>
+                </label>
+              </div>
+
+              <div id="message" class="hidden mt-4 p-4 rounded-3xl"></div>
+
+              <!-- Nút Gửi -->
+              <div class="flex justify-end">
+                <button
+                  type="submit"
+                  id="submitButton"
+                  class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white py-3 px-6 rounded-3xl hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  Gửi đơn ứng tuyển
+                </button>
+              </div>
+            </form>
+
+            <!-- Success Message (ẩn ban đầu) -->
+            <div id="success-message" class="hidden">
+              <div class="text-center py-12">
+                <div class="mb-6">
+                  <svg
+                    class="w-20 h-20 mx-auto text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                  Đơn ứng tuyển đã được gửi thành công!
+                </h2>
+                <p class="text-lg text-gray-600 mb-8">
+                  Chúng tôi đã nhận được đơn ứng tuyển của bạn. Chúng tôi sẽ
+                  liên hệ với bạn sớm nhất có thể.
+                </p>
+                <a
+                  id="back-to-job-button"
+                  href="#"
+                  class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-3xl font-medium shadow-lg hover:shadow-xl transition"
+                >
+                  Trở về trang chi tiết việc làm
+                </a>
               </div>
             </div>
           </div>
@@ -657,10 +661,10 @@
 
       function showMessage(text, type) {
         messageDiv.textContent = text;
-        messageDiv.className = `mt-4 p-4 rounded-xl ${
+        messageDiv.className = `mt-4 p-4 rounded-3xl ${
           type === "error"
-            ? "bg-red-50 text-red-700 border border-red-200"
-            : "bg-green-50 text-green-700 border border-green-200"
+            ? "bg-red-50 text-red-700"
+            : "bg-green-50 text-green-700"
         }`;
         messageDiv.classList.remove("hidden");
         setTimeout(() => {

@@ -11,7 +11,7 @@
     <!-- ============================================ -->
     <script>
       const CONTACT_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbzl2pV61fWLKtTAx50vfTFn562_l3tGHQLA8VJUISu0kudW7BZg8kVKNtSlmdodZKS9/exec";
+        "https://script.google.com/macros/s/AKfycbwV5mUyGuBGVlmapkFNesXpOpTTOidO2BTRiAlW_bNWDd91bvv6QivOZ_1qioeyV0g9/exec";
     </script>
   </head>
   <body class="bg-gray-100 text-gray-900">
@@ -217,12 +217,12 @@ và hoàn thiện hơn trên hành trình đồng hành lâu dài.
               <div class="space-y-6">
                 <div>
                   <p class="text-sm text-gray-600 mb-1">Email:</p>
-                  <p class="text-base font-bold text-gray-900">contact@ndp.com</p>
+                  <p class="text-base font-bold text-gray-900">info@ndphat.vn</p>
                 </div>
-                <div>
+                <!-- <div>
                   <p class="text-sm text-gray-600 mb-1">Điện thoại:</p>
                   <p class="text-base font-bold text-gray-900">+84 123 456 789</p>
-                </div>
+                </div> -->
                 <div>
                   <p class="text-sm text-gray-600 mb-1">Thời gian làm việc</p>
                   <p class="text-base font-bold text-gray-900">
@@ -390,6 +390,7 @@ và hoàn thiện hơn trên hành trình đồng hành lâu dài.
           email: document.getElementById("email").value,
           phone: phoneValue,
           message: document.getElementById("message").value,
+          formType: "insights", // Phân biệt form từ trang Insights
         };
 
         try {
@@ -462,7 +463,7 @@ và hoàn thiện hơn trên hành trình đồng hành lâu dài.
         } catch (error) {
           console.error("Form submission error:", error);
           showContactMessage(
-            "Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại sau.",
+            "Có lỗi xảy ra khi gửi ý kiến. Vui lòng thử lại sau.",
             "error"
           );
           contactSubmitButton.disabled = false;
