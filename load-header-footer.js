@@ -76,7 +76,7 @@ function loadFooter() {
       }
       @media (min-width: 768px) {
         footer .footer-grid {
-          grid-template-columns: repeat(3, 1fr) !important;
+          grid-template-columns: repeat(4, 1fr) !important;
           display: grid !important;
         }
         footer .footer-grid > div {
@@ -122,7 +122,7 @@ function loadFooter() {
   const footerHTML = `
     <footer class="border-t border-gray-200 bg-white py-12 md:py-16">
       <div class="container mx-auto px-4">
-        <div class="footer-grid grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
+        <div class="footer-grid grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
           <!-- About -->
           <div>
             <h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent">
@@ -174,6 +174,40 @@ function loadFooter() {
               </a>
             </div>
           </div>
+
+          <!-- Quick Links -->
+          <div style="display: block !important; visibility: visible !important">
+            <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
+              Liên kết nhanh
+            </h3>
+            <div class="space-y-3" style="display: block !important">
+              <div>
+                <a href="index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Trang chủ
+                </a>
+              </div>
+              <div>
+                <a href="insights/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Chia sẻ & Xin ý kiến
+                </a>
+              </div>
+              <div>
+                <a href="campaigns/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Chiến dịch & Chương trình
+                </a>
+              </div>
+              <div>
+                <a href="join-us/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Tuyển dụng & Đồng hành
+                </a>
+              </div>
+              <div>
+                <a href="contact/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Liên hệ
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="border-t border-gray-200 pt-8 text-center">
           <p class="text-sm text-gray-600">
@@ -186,10 +220,13 @@ function loadFooter() {
 
   footerPlaceholder.innerHTML = footerHTML;
 
-  // Update image paths in footer after insertion to ensure they're correct
+  // Update image paths and links in footer after insertion to ensure they're correct
   setTimeout(() => {
     const footer = footerPlaceholder.querySelector('footer');
     if (footer) {
+      // Update footer links (similar to header links)
+      updateFooterLinks(footer);
+      
       // Fix image paths that might not have been evaluated correctly
       const images = footer.querySelectorAll('img[src*="assets/icons"], img[src*="icons"]');
       images.forEach(img => {
@@ -225,6 +262,60 @@ function loadFooter() {
       }
     }
   }, 50);
+}
+
+// Helper function to update footer links to be relative to current page
+function updateFooterLinks(footerElement) {
+  const basePath = getBasePath();
+  const currentPath = window.location.pathname;
+  
+  const links = footerElement.querySelectorAll('a[href]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      // If href is already relative (starts with ../ or ./), keep it
+      if (href.startsWith('../') || href.startsWith('./')) {
+        return;
+      }
+      
+      // Map standard paths to relative paths based on current location
+      let targetPath = href;
+      
+      // Handle paths like "insights/index.html" - need to check if we're already in that directory
+      if (href === 'index.html') {
+        // If we're in a subdirectory, go up; if at root, stay
+        link.setAttribute('href', basePath + 'index.html');
+      } else if (href === 'insights/index.html') {
+        // If we're in insights/, use './index.html', otherwise use '../insights/index.html' or './insights/index.html'
+        if (currentPath.includes('/insights/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'insights/index.html');
+        }
+      } else if (href === 'campaigns/index.html') {
+        if (currentPath.includes('/campaigns/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'campaigns/index.html');
+        }
+      } else if (href === 'join-us/index.html') {
+        if (currentPath.includes('/join-us/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'join-us/index.html');
+        }
+      } else if (href === 'contact/index.html') {
+        if (currentPath.includes('/contact/')) {
+          link.setAttribute('href', './index.html');
+        } else {
+          link.setAttribute('href', basePath + 'contact/index.html');
+        }
+      } else {
+        // For any other path, make it relative to base
+        link.setAttribute('href', basePath + href.replace(/^\//, ''));
+      }
+    }
+  });
 }
 
 // Helper function to update header links to be relative to current page
