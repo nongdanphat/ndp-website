@@ -2,41 +2,15 @@
 // This ensures fonts are available for all pages that load this script
 // Fonts are now self-hosted in /assets/fonts/ to avoid FOUT (Flash of Unstyled Text)
 
-// Helper function to get base path based on current location
-function getBasePath() {
-  const path = window.location.pathname;
-  // Remove filename and leading slash, filter out empty strings and HTML files
-  // Split by '/' and filter out empty strings and HTML files
-  const parts = path.split('/').filter(p => p);
-  const pathParts = parts.filter(p => !p.endsWith('.html'));
-  
-  // If we're at root (no path parts), return './'
-  // If we have only 1 part (repo name like 'ndp-website'), we're at repo root, return './'
-  // Otherwise, go up one level for each directory (excluding repo name)
-  if (pathParts.length === 0) {
-    return './';
-  }
-  
-  // Check if we're at repo root (only repo name in path)
-  // For GitHub Pages with repo name, if pathParts.length === 1, we're at root
-  // For subdirectories, pathParts.length will be > 1 (repo name + subdirs)
-  if (pathParts.length === 1) {
-    // At repo root (e.g., /ndp-website/), return './'
-    return './';
-  }
-  
-  // In subdirectory: count directories excluding repo name
-  // pathParts[0] is repo name, pathParts[1+] are subdirectories
-  const subdirCount = pathParts.length - 1;
-  return '../'.repeat(subdirCount);
-}
+// Note: Using absolute paths (starting with /) for Cloudflare Pages compatibility
+// All assets and links now use absolute paths from root
 
 // Add styles.css link if not already present
 
-if (!document.querySelector('link[href*="styles.css"]')) {
+if (!document.querySelector('link[href="/styles.css"]')) {
   const styleLink = document.createElement('link');
   styleLink.rel = 'stylesheet';
-  styleLink.href = getBasePath() + 'styles.css';
+  styleLink.href = '/styles.css';
   document.head.appendChild(styleLink);
 }
 
@@ -118,7 +92,6 @@ function loadFooter() {
   }
 
   // Create footer HTML
-  const basePath = getBasePath();
   const footerHTML = `
     <footer class="border-t border-gray-200 bg-white py-12 md:py-16">
       <div class="container mx-auto px-4">
@@ -164,13 +137,13 @@ function loadFooter() {
             </h3>
             <div class="flex gap-4 items-center flex-wrap" style="display: flex; gap: 1rem; align-items: center">
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="Facebook" title="Facebook" style="display: inline-block">
-                <img src="${basePath}assets/icons/fb.webp" alt="Facebook" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="/assets/icons/fb.webp" alt="Facebook" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="Instagram" title="Instagram" style="display: inline-block">
-                <img src="${basePath}assets/icons/ig.webp" alt="Instagram" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="/assets/icons/ig.webp" alt="Instagram" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="YouTube" title="YouTube" style="display: inline-block">
-                <img src="${basePath}assets/icons/youtube.png" alt="YouTube" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
+                <img src="/assets/icons/youtube.png" alt="YouTube" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
             </div>
           </div>
@@ -182,27 +155,27 @@ function loadFooter() {
             </h3>
             <div class="space-y-3" style="display: block !important">
               <div>
-                <a href="index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
                   Trang chủ
                 </a>
               </div>
               <div>
-                <a href="insights/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/insights/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
                   Chia sẻ & Xin ý kiến
                 </a>
               </div>
               <div>
-                <a href="campaigns/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/campaigns/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
                   Chiến dịch & Chương trình
                 </a>
               </div>
               <div>
-                <a href="join-us/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/join-us/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
                   Tuyển dụng & Đồng hành
                 </a>
               </div>
               <div>
-                <a href="contact/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/contact/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
                   Liên hệ
                 </a>
               </div>
@@ -220,41 +193,12 @@ function loadFooter() {
 
   footerPlaceholder.innerHTML = footerHTML;
 
-  // Update image paths and links in footer after insertion to ensure they're correct
+  // Update links in footer after insertion
   setTimeout(() => {
     const footer = footerPlaceholder.querySelector('footer');
     if (footer) {
-      // Update footer links (similar to header links)
+      // Update footer links
       updateFooterLinks(footer);
-      
-      // Fix image paths that might not have been evaluated correctly
-      const images = footer.querySelectorAll('img[src*="assets/icons"], img[src*="icons"]');
-      images.forEach(img => {
-        const currentSrc = img.getAttribute('src');
-        // Check if src needs fixing (contains template string or is malformed)
-        if (currentSrc) {
-          let needsFix = false;
-          let iconName = '';
-          
-          if (currentSrc.includes('${basePath}')) {
-            // Template string wasn't evaluated
-            needsFix = true;
-            iconName = currentSrc.split('assets/icons/').pop() || currentSrc.split('/').pop();
-          } else if (!currentSrc.startsWith('http') && !currentSrc.startsWith('../') && !currentSrc.startsWith('./') && currentSrc.includes('assets/icons')) {
-            // Path exists but might be wrong
-            iconName = currentSrc.split('assets/icons/').pop();
-            if (iconName) needsFix = true;
-          } else if (currentSrc.includes('icons/') && !currentSrc.startsWith('../') && !currentSrc.startsWith('./')) {
-            // Just icon name or partial path
-            iconName = currentSrc.split('icons/').pop() || currentSrc.split('/').pop();
-            needsFix = true;
-          }
-          
-          if (needsFix && iconName) {
-            img.setAttribute('src', basePath + 'assets/icons/' + iconName);
-          }
-        }
-      });
       
       const socialSection = footer.querySelector('.social-media-section');
       if (socialSection) {
@@ -264,110 +208,51 @@ function loadFooter() {
   }, 50);
 }
 
-// Helper function to update footer links to be relative to current page
+// Helper function to update footer links to use absolute paths
 function updateFooterLinks(footerElement) {
-  const basePath = getBasePath();
-  const currentPath = window.location.pathname;
-  
   const links = footerElement.querySelectorAll('a[href]');
   links.forEach(link => {
     const href = link.getAttribute('href');
-    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-      // If href is already relative (starts with ../ or ./), keep it
-      if (href.startsWith('../') || href.startsWith('./')) {
-        return;
-      }
-      
-      // Map standard paths to relative paths based on current location
-      let targetPath = href;
-      
-      // Handle paths like "insights/index.html" - need to check if we're already in that directory
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('/')) {
+      // Convert relative paths to absolute paths
       if (href === 'index.html') {
-        // If we're in a subdirectory, go up; if at root, stay
-        link.setAttribute('href', basePath + 'index.html');
+        link.setAttribute('href', '/index.html');
       } else if (href === 'insights/index.html') {
-        // If we're in insights/, use './index.html', otherwise use '../insights/index.html' or './insights/index.html'
-        if (currentPath.includes('/insights/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'insights/index.html');
-        }
+        link.setAttribute('href', '/insights/index.html');
       } else if (href === 'campaigns/index.html') {
-        if (currentPath.includes('/campaigns/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'campaigns/index.html');
-        }
+        link.setAttribute('href', '/campaigns/index.html');
       } else if (href === 'join-us/index.html') {
-        if (currentPath.includes('/join-us/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'join-us/index.html');
-        }
+        link.setAttribute('href', '/join-us/index.html');
       } else if (href === 'contact/index.html') {
-        if (currentPath.includes('/contact/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'contact/index.html');
-        }
+        link.setAttribute('href', '/contact/index.html');
       } else {
-        // For any other path, make it relative to base
-        link.setAttribute('href', basePath + href.replace(/^\//, ''));
+        // For any other path, ensure it starts with /
+        link.setAttribute('href', '/' + href.replace(/^\//, ''));
       }
     }
   });
 }
 
-// Helper function to update header links to be relative to current page
+// Helper function to update header links to use absolute paths
 function updateHeaderLinks(headerElement) {
-  const basePath = getBasePath();
-  const currentPath = window.location.pathname;
-  const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-  
   const links = headerElement.querySelectorAll('a[href]');
   links.forEach(link => {
     const href = link.getAttribute('href');
-    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-      // If href is already relative (starts with ../ or ./), keep it
-      if (href.startsWith('../') || href.startsWith('./')) {
-        return;
-      }
-      
-      // Map standard paths to relative paths based on current location
-      let targetPath = href;
-      
-      // Handle paths like "insights/index.html" - need to check if we're already in that directory
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('/')) {
+      // Convert relative paths to absolute paths
       if (href === 'index.html') {
-        // If we're in a subdirectory, go up; if at root, stay
-        link.setAttribute('href', basePath + 'index.html');
+        link.setAttribute('href', '/index.html');
       } else if (href === 'insights/index.html') {
-        // If we're in insights/, use './index.html', otherwise use '../insights/index.html' or './insights/index.html'
-        if (currentPath.includes('/insights/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'insights/index.html');
-        }
+        link.setAttribute('href', '/insights/index.html');
       } else if (href === 'campaigns/index.html') {
-        if (currentPath.includes('/campaigns/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'campaigns/index.html');
-        }
+        link.setAttribute('href', '/campaigns/index.html');
       } else if (href === 'join-us/index.html') {
-        if (currentPath.includes('/join-us/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'join-us/index.html');
-        }
+        link.setAttribute('href', '/join-us/index.html');
       } else if (href === 'contact/index.html') {
-        if (currentPath.includes('/contact/')) {
-          link.setAttribute('href', './index.html');
-        } else {
-          link.setAttribute('href', basePath + 'contact/index.html');
-        }
+        link.setAttribute('href', '/contact/index.html');
       } else {
-        // For any other path, make it relative to base
-        link.setAttribute('href', basePath + href.replace(/^\//, ''));
+        // For any other path, ensure it starts with /
+        link.setAttribute('href', '/' + href.replace(/^\//, ''));
       }
     }
   });
@@ -381,8 +266,7 @@ function loadHeader() {
     return;
   }
   
-  const basePath = getBasePath();
-  const headerPath = basePath + 'header.html';
+  const headerPath = '/header.html';
   
   function tryLoadHeader(path, attempt = 1) {
     fetch(path)
@@ -401,11 +285,9 @@ function loadHeader() {
       .catch(error => {
         console.error(`Error loading header from ${path} (attempt ${attempt}):`, error);
         
-        // Try alternative paths
+        // Try alternative paths as fallback
         const altPaths = [
-          './header.html',
-          'header.html',
-          '../header.html'
+          '/header.html'
         ];
         
         if (attempt <= altPaths.length) {
