@@ -50,12 +50,15 @@ function loadFooter() {
       }
       @media (min-width: 768px) {
         footer .footer-grid {
-          grid-template-columns: repeat(4, 1fr) !important;
+          grid-template-columns: repeat(3, 1fr) !important;
           display: grid !important;
         }
         footer .footer-grid > div {
           display: block !important;
           visibility: visible !important;
+        }
+        footer .social-media-section {
+          display: none !important;
         }
       }
       @media (max-width: 767px) {
@@ -95,9 +98,9 @@ function loadFooter() {
   const footerHTML = `
     <footer class="border-t border-gray-200 bg-white py-12 md:py-16">
       <div class="container mx-auto px-4">
-        <div class="footer-grid grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
+        <div class="footer-grid grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
           <!-- About -->
-          <div>
+          <div class="text-center md:text-left">
             <h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent">
               NDP
             </h3>
@@ -109,19 +112,19 @@ function loadFooter() {
           </div>
 
           <!-- Contact -->
-          <div style="display: block !important; visibility: visible !important">
+          <div class="text-center md:text-left" style="display: block !important; visibility: visible !important">
             <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
               Thông tin liên hệ
             </h3>
             <div class="space-y-3" style="display: block !important">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex items-center justify-center md:justify-start gap-3">
+                <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span class="text-gray-600 text-sm">info@ndphat.vn</span>
               </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex items-center justify-center md:justify-start gap-3">
+                <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -131,11 +134,11 @@ function loadFooter() {
           </div>
 
           <!-- Social Media -->
-          <div class="social-media-section" style="min-height: 100px !important; display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important;">
+          <div class="social-media-section text-center md:text-left" style="display: none !important;">
             <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block">
               Theo dõi chúng tôi
             </h3>
-            <div class="flex gap-4 items-center flex-wrap" style="display: flex; gap: 1rem; align-items: center">
+            <div class="flex gap-4 items-center justify-center md:justify-start flex-wrap" style="display: flex; gap: 1rem; align-items: center">
               <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition inline-block" aria-label="Facebook" title="Facebook" style="display: inline-block">
                 <img src="/assets/icons/fb.webp" alt="Facebook" class="w-8 h-8 object-contain" style="width: 2rem; height: 2rem; object-fit: contain; display: block;" />
               </a>
@@ -149,7 +152,7 @@ function loadFooter() {
           </div>
 
           <!-- Quick Links -->
-          <div style="display: block !important; visibility: visible !important">
+          <div class="text-center md:text-left" style="display: block !important; visibility: visible !important">
             <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
               Liên kết nhanh
             </h3>

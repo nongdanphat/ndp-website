@@ -126,11 +126,32 @@
                 id="contact-message"
                 class="hidden mt-4 p-4 rounded-3xl"
               ></div>
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="consent-checkbox"
+                  name="consent"
+                  required
+                  class="mt-1 rounded border-gray-300 text-[#AB7E31] cursor-pointer custom-checkbox"
+                />
+                <label
+                  for="consent-checkbox"
+                  class="text-sm text-gray-700 cursor-pointer leading-relaxed"
+                >
+                  Tôi đồng ý cho
+                  <span class="text-[#AB7E31] font-semibold"
+                    >Nông Dân Phát</span
+                  >
+                  thu thập và sử dụng thông tin tôi cung cấp để liên hệ tư vấn
+                  và cung cấp thông tin liên quan.
+                </label>
+              </div>
               <div class="flex justify-end">
                 <button
                   type="submit"
                   id="contact-submit-button"
                   class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white py-3 px-6 rounded-3xl hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  disabled
                 >
                   Gửi yêu cầu
                 </button>
@@ -146,6 +167,61 @@
 
     <!-- Load header and footer -->
     <script src="/load-header-footer.js"></script>
+
+    <!-- Custom Checkbox Styles -->
+    <style>
+      .custom-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: white;
+        border: 2px solid #d1d5db;
+        border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .custom-checkbox:checked {
+        background-color: #ab7e31;
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:checked::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .custom-checkbox:hover {
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    </style>
 
     <!-- JavaScript -->
     <script>
@@ -165,6 +241,12 @@
         "contact-submit-button"
       );
       const contactMessage = document.getElementById("contact-message");
+      const consentCheckbox = document.getElementById("consent-checkbox");
+
+      // Enable/disable submit button based on checkbox
+      consentCheckbox.addEventListener("change", function () {
+        contactSubmitButton.disabled = !this.checked;
+      });
 
       function showContactMessage(text, type) {
         contactMessage.textContent = text;
@@ -250,6 +332,8 @@
               "success"
             );
             contactForm.reset();
+            consentCheckbox.checked = false;
+            contactSubmitButton.disabled = true;
 
             setTimeout(() => {
               if (hiddenForm.parentNode) {

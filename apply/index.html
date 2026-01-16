@@ -15,14 +15,57 @@
     </script>
 
     <style>
-      /* Custom checkbox - đảm bảo checkmark hiển thị */
-      #checkbox-custom {
+      /* Custom Checkbox Styles */
+      .custom-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: white;
+        border: 2px solid #d1d5db;
+        border-radius: 4px;
         position: relative;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        outline: none;
+        box-shadow: none;
       }
 
-      #checkbox-checkmark {
+      .custom-checkbox:checked {
+        background-color: #ab7e31;
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:checked::after {
+        content: "";
         position: absolute;
-        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .custom-checkbox:hover {
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border-color: #ab7e31;
+      }
+
+      .custom-checkbox:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
       }
 
       /* Custom dropdown panel styling */
@@ -299,43 +342,24 @@
               </div>
 
               <!-- Checkbox xác nhận -->
-              <div class="flex items-start">
-                <label for="policy" class="flex items-start cursor-pointer">
-                  <div class="relative mt-0.5">
-                    <input
-                      type="checkbox"
-                      id="policy"
-                      name="policy"
-                      checked
-                      required
-                      class="sr-only"
-                    />
-                    <div
-                      id="checkbox-custom"
-                      class="w-5 h-5 border-2 border-gray-300 rounded bg-white transition-all duration-200 flex items-center justify-center hover:border-[#AB7E31] cursor-pointer relative"
-                    >
-                      <svg
-                        id="checkbox-checkmark"
-                        class="w-3.5 h-3.5 text-white absolute transition-opacity duration-200"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        style="opacity: 0; display: none"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="3.5"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="ml-2 text-sm text-gray-700">
-                    Tôi xác nhận đã đọc và đồng ý với chính sách bảo mật và điều
-                    khoản sử dụng
-                    <span class="text-red-500">*</span>
-                  </span>
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="consent-checkbox"
+                  name="consent"
+                  required
+                  class="mt-1 rounded border-gray-300 text-[#AB7E31] cursor-pointer custom-checkbox"
+                />
+                <label
+                  for="consent-checkbox"
+                  class="text-sm text-gray-700 cursor-pointer leading-relaxed"
+                >
+                  Tôi đồng ý cho
+                  <span class="text-[#AB7E31] font-semibold"
+                    >Nông Dân Phát</span
+                  >
+                  thu thập và sử dụng thông tin tôi cung cấp để liên hệ tư vấn
+                  và cung cấp thông tin liên quan.
                 </label>
               </div>
 
@@ -347,6 +371,7 @@
                   type="submit"
                   id="submitButton"
                   class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white py-3 px-6 rounded-3xl hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  disabled
                 >
                   Gửi đơn ứng tuyển
                 </button>
@@ -482,38 +507,20 @@
         });
       }
 
-      // Custom checkbox handling
-      const policyCheckbox = document.getElementById("policy");
-      const checkboxCustom = document.getElementById("checkbox-custom");
-      const checkboxCheckmark = document.getElementById("checkbox-checkmark");
+      // Form submission - declare variables first
+      const form = document.getElementById("application-form");
+      const submitButton = document.getElementById("submitButton");
 
-      function updateCheckbox() {
-        if (policyCheckbox.checked) {
-          checkboxCustom.style.backgroundColor = "#AB7E31";
-          checkboxCustom.style.borderColor = "#AB7E31";
-          checkboxCheckmark.style.opacity = "1";
-          checkboxCheckmark.style.display = "block";
-        } else {
-          checkboxCustom.style.backgroundColor = "white";
-          checkboxCustom.style.borderColor = "#D1D5DB";
-          checkboxCheckmark.style.opacity = "0";
-          checkboxCheckmark.style.display = "none";
-        }
-      }
+      // Checkbox validation
+      const consentCheckbox = document.getElementById("consent-checkbox");
 
-      // Initialize checkbox
-      updateCheckbox();
-
-      // Update on change
-      policyCheckbox.addEventListener("change", updateCheckbox);
-
-      // Also update when clicking on the custom checkbox div
-      checkboxCustom.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        policyCheckbox.checked = !policyCheckbox.checked;
-        updateCheckbox();
+      // Enable/disable submit button based on checkbox
+      consentCheckbox.addEventListener("change", function () {
+        submitButton.disabled = !this.checked;
       });
+
+      // Initialize: disable submit button if checkbox is not checked
+      submitButton.disabled = !consentCheckbox.checked;
 
       // File upload handling
       const cvFileInput = document.getElementById("cvFile");
@@ -642,9 +649,7 @@
         }
       });
 
-      // Form submission
-      const form = document.getElementById("application-form");
-      const submitButton = document.getElementById("submitButton");
+      // Form submission - continue with other variables
       const messageDiv = document.getElementById("message");
       const successMessage = document.getElementById("success-message");
       const backToJobButton = document.getElementById("back-to-job-button");
@@ -767,6 +772,8 @@
 
             // Reset form data
             form.reset();
+            consentCheckbox.checked = false;
+            submitButton.disabled = true;
             cvFileInput.value = "";
             cvFileName.textContent = "";
             cvBase64 = "";
