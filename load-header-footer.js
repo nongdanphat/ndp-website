@@ -116,19 +116,27 @@ function loadFooter() {
                 class="h-[4rem] w-auto inline-block"
               />
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
               <span class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent font-semibold">Nông Dân Phát</span>
               là nền tảng đồng hành cùng nông dân và cộng đồng nông nghiệp, kết nối
               con người – tri thức – nguồn lực để tạo ra giá trị bền vững.
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Website ndphat.vn là trang thông tin giới thiệu về dự án Nông Dân Phát.
+              Website không thực hiện mua bán, không phát sinh giao dịch. Các hoạt động kết nối và dịch vụ (nếu có) được triển khai trên Ứng dụng di động Nông Dân Phát.
             </p>
           </div>
 
           <!-- Contact -->
           <div class="text-center md:text-left" style="display: block !important; visibility: visible !important">
             <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
-              Thông tin liên hệ
+              Chủ thể chịu trách nhiệm
             </h3>
             <div class="space-y-3" style="display: block !important">
+              <div class="flex gap-1">
+                <p class="text-gray-600 text-sm font-semibold mb-1">Tên dự án:</p>
+                <p class="text-gray-700 text-sm">Nông Dân Phát</p>
+              </div>
               <div class="flex items-center justify-center md:justify-start gap-3">
                 <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -194,10 +202,23 @@ function loadFooter() {
                   Liên hệ
                 </a>
               </div>
+              <div>
+                <a href="/chinh-sach-bao-mat.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Chính sách bảo mật
+                </a>
+              </div>
+              <div>
+                <a href="/dieu-khoan-su-dung.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                  Điều khoản sử dụng
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <div class="border-t border-gray-200 pt-8 text-center">
+          <p class="text-sm text-gray-400 mb-2">
+            Website hoạt động theo quy định pháp luật Việt Nam.
+          </p>
           <p class="text-sm text-gray-600">
             © 2026 Nông Dân Phát. Mọi quyền được bảo lưu.
           </p>
