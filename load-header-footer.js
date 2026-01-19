@@ -6,12 +6,20 @@
 // All assets and links now use absolute paths from root
 
 // Add styles.css link if not already present
-
 if (!document.querySelector('link[href="/styles.css"]')) {
   const styleLink = document.createElement('link');
   styleLink.rel = 'stylesheet';
   styleLink.href = '/styles.css';
   document.head.appendChild(styleLink);
+}
+
+// Add favicon if not already present
+if (!document.querySelector('link[rel="icon"]') && !document.querySelector('link[rel="shortcut icon"]')) {
+  const faviconLink = document.createElement('link');
+  faviconLink.rel = 'icon';
+  faviconLink.type = 'image/x-icon';
+  faviconLink.href = '/assets/images/favicon.ico';
+  document.head.appendChild(faviconLink);
 }
 
 // Configure Tailwind to use Inter font (works even if Tailwind loads after)
@@ -101,9 +109,13 @@ function loadFooter() {
         <div class="footer-grid grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
           <!-- About -->
           <div class="text-center md:text-left">
-            <h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent">
-              NDP
-            </h3>
+            <div class="mb-4">
+              <img
+                src="/assets/images/logo.png"
+                alt="Nông Dân Phát"
+                class="h-[4rem] w-auto inline-block"
+              />
+            </div>
             <p class="text-gray-600 text-sm leading-relaxed">
               <span class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent font-semibold">Nông Dân Phát</span>
               là nền tảng đồng hành cùng nông dân và cộng đồng nông nghiệp, kết nối
