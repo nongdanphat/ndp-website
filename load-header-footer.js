@@ -116,12 +116,12 @@ function loadFooter() {
                 class="h-[4rem] w-auto inline-block"
               />
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            <p class="text-gray-600 text-base leading-relaxed mb-3">
               <span class="bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] bg-clip-text text-transparent font-semibold">Nông Dân Phát</span>
               là nền tảng đồng hành cùng nông dân và cộng đồng nông nghiệp, kết nối
               con người – tri thức – nguồn lực để tạo ra giá trị bền vững.
             </p>
-            <p class="text-gray-600 text-sm leading-relaxed">
+            <p class="text-gray-600 text-base leading-relaxed">
               Website ndphat.vn là trang thông tin giới thiệu về dự án Nông Dân Phát.
               Website không thực hiện mua bán, không phát sinh giao dịch. Các hoạt động kết nối và dịch vụ (nếu có) được triển khai trên Ứng dụng di động Nông Dân Phát.
             </p>
@@ -133,22 +133,22 @@ function loadFooter() {
               Chủ thể chịu trách nhiệm
             </h3>
             <div class="space-y-3" style="display: block !important">
-              <div class="flex gap-1">
-                <p class="text-gray-600 text-sm font-semibold mb-1">Tên dự án:</p>
-                <p class="text-gray-700 text-sm">Nông Dân Phát</p>
+              <div class="flex items-center justify-center md:justify-start gap-1">
+                <p class="text-gray-600 text-base font-semibold mb-1">Tên dự án:</p>
+                <p class="text-gray-700 text-base">Nông Dân Phát</p>
               </div>
               <div class="flex items-center justify-center md:justify-start gap-3">
                 <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span class="text-gray-600 text-sm">info@ndphat.vn</span>
+                <span class="text-gray-600 text-base">info@ndphat.vn</span>
               </div>
               <div class="flex items-center justify-center md:justify-start gap-3">
                 <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span class="text-gray-600 text-sm">Số 546, Thôn Minh Hòa, Xã Hàm Thuận Nam, Tỉnh Lâm Đồng, Việt Nam</span>
+                <span class="text-gray-600 text-base">Số 546, Thôn Minh Hòa, Xã Hàm Thuận Nam, Tỉnh Lâm Đồng, Việt Nam</span>
               </div>
             </div>
           </div>
@@ -178,37 +178,37 @@ function loadFooter() {
             </h3>
             <div class="space-y-3" style="display: block !important">
               <div>
-                <a href="/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
                   Trang chủ
                 </a>
               </div>
               <div>
-                <a href="/insights/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
-                  Chia sẻ & Xin ý kiến
+                <a href="/insights/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                  Chia sẻ
                 </a>
               </div>
               <div>
-                <a href="/campaigns/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
-                  Chiến dịch & Chương trình
+                <a href="/campaigns/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                  Chiến dịch
                 </a>
               </div>
               <div>
-                <a href="/join-us/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
-                  Tuyển dụng & Đồng hành
+                <a href="/join-us/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                  Tuyển dụng
                 </a>
               </div>
               <div>
-                <a href="/contact/index.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/contact/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
                   Liên hệ
                 </a>
               </div>
               <div>
-                <a href="/chinh-sach-bao-mat.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/chinh-sach-bao-mat.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
                   Chính sách bảo mật
                 </a>
               </div>
               <div>
-                <a href="/dieu-khoan-su-dung.html" class="text-gray-600 text-sm hover:text-[#AB7E31] transition block">
+                <a href="/dieu-khoan-su-dung.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
                   Điều khoản sử dụng
                 </a>
               </div>
@@ -216,10 +216,10 @@ function loadFooter() {
           </div>
         </div>
         <div class="border-t border-gray-200 pt-8 text-center">
-          <p class="text-sm text-gray-400 mb-2">
+          <p class="text-base text-gray-400 mb-2 text-center">
             Website hoạt động theo quy định pháp luật Việt Nam.
           </p>
-          <p class="text-sm text-gray-600">
+          <p class="text-base text-gray-600 text-center">
             © 2026 Nông Dân Phát. Mọi quyền được bảo lưu.
           </p>
         </div>
@@ -315,8 +315,14 @@ function loadHeader() {
       .then(data => {
         placeholder.innerHTML = data;
         updateHeaderLinks(placeholder);
-        initMobileMenu();
+        // [Tạm comment] Hamburger collapse khi mobile – menu items tự wrap, logo ẩn trên mobile
+        // initMobileMenu();
         highlightActiveMenuItem();
+        // Ẩn hẳn mọi nút / mũi tên trong header (phòng cache hoặc DOM cũ)
+        const header = placeholder.querySelector('header');
+        if (header) {
+          header.querySelectorAll('button, [id="mobile-menu-button"], #mobile-menu').forEach(el => el.remove());
+        }
       })
       .catch(error => {
         console.error(`Error loading header from ${path} (attempt ${attempt}):`, error);
