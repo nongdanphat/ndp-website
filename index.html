@@ -1,981 +1,1061 @@
 <!DOCTYPE html>
 <html lang="vi" style="scroll-behavior: smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chủ - NDP</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Configure Tailwind after it's loaded
-      if (typeof tailwind !== "undefined") {
-        tailwind.config = {
-          theme: {
-            extend: {
-              fontFamily: {
-                sans: ["Inter", "sans-serif"],
-              },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ - NDP</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configure Tailwind after it's loaded
+    if (typeof tailwind !== "undefined") {
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
             },
           },
-        };
-      }
-    </script>
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body class="bg-white text-gray-900">
-    <!-- Header placeholder - will be loaded dynamically -->
-    <div id="header-placeholder"></div>
+        },
+      };
+    }
+  </script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-    <!-- Main Content -->
-    <main class="min-h-screen">
-      <!-- Hero Section -->
-      <section
-        class="relative overflow-hidden flex items-center"
-        style="height: calc(100vh - 4rem)"
-      >
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-          <img
-            src="/assets/images/home-page-banner.jpg"
-            alt="Banner NDP"
-            class="w-full h-full object-cover"
-          />
-          <!-- Dark Overlay for text readability -->
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"
-          ></div>
-        </div>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header placeholder - will be loaded dynamically -->
+  <div id="header-placeholder"></div>
 
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10 z-0">
-          <div
-            class="absolute inset-0"
-            style="
+  <!-- Main Content -->
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden flex items-center" style="height: calc(100vh - 4rem)">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="/assets/images/home-page-banner.jpg" alt="Banner NDP" class="w-full h-full object-cover" />
+        <!-- Dark Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"></div>
+      </div>
+
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10 z-0">
+        <div class="absolute inset-0" style="
               background-image: radial-gradient(
                 circle at 2px 2px,
                 white 1px,
                 transparent 0
               );
               background-size: 40px 40px;
-            "
-          ></div>
-        </div>
+            "></div>
+      </div>
 
-        <div class="container mx-auto px-4 relative z-10 w-full">
-          <div class="max-w-4xl mx-auto text-center">
-            <!-- Content -->
-            <div class="text-white">
-              <h1
-                class="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
-              >
-                <span class="text-[#ffb83b]">Nông Dân Phát</span><br />
-                <span
-                  class="block mt-3 text-2xl md:text-3xl lg:text-4xl font-normal"
-                  >Đồng hành cùng nông dân kiến tạo giá trị bền vững</span
-                >
-              </h1>
-              <p class="text-base md:text-lg text-white font-medium mb-5">
-                Trí khai mở tư duy · Thiện gắn kết con người · Tốt tạo giá trị
-                lâu dài
-              </p>
-              <p
-                class="text-sm md:text-base text-white mb-10 leading-relaxed max-w-2xl mx-auto"
-              >
-                <span class="text-[#ffb83b]">Nông Dân Phát</span> là nền tảng
-                phát triển nông nghiệp vì con người, đồng hành để nông dân tự
-                làm chủ sản xuất, tạo ra giá trị kinh tế chân chính và bền vững.
-              </p>
-              <div
-                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              >
-                <a
-                  href="#mission"
-                  class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-7 py-3 rounded-3xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-sm md:text-base"
-                >
-                  Tìm hiểu cách chúng tôi làm
-                </a>
-                <a
-                  href="/join-us/index.html"
-                  class="inline-block bg-white/10 backdrop-blur-sm text-white px-7 py-3 rounded-3xl font-medium border-2 border-white/20 hover:bg-white/20 transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-sm md:text-base"
-                >
-                  Đồng hành cùng chúng tôi
-                </a>
-              </div>
+      <div class="container mx-auto px-4 relative z-10 w-full">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Content -->
+          <div class="text-white">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+              <span class="text-[#ffb83b]">Nông Dân Phát</span><br />
+              <span class="block mt-3 text-2xl md:text-3xl lg:text-4xl font-normal">Đồng hành cùng nông dân kiến tạo giá
+                trị bền vững</span>
+            </h1>
+            <p class="text-base md:text-lg text-white font-medium mb-5">
+              Trí khai mở tư duy · Thiện gắn kết con người · Tốt tạo giá trị
+              lâu dài
+            </p>
+            <p
+              class="text-base text-white mb-10 leading-relaxed">
+              <span class="text-[#ffb83b]">Nông Dân Phát</span> là nền tảng
+              phát triển nông nghiệp vì con người, đồng hành để nông dân tự
+              làm chủ sản xuất, tạo ra giá trị kinh tế chân chính và bền vững.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="#mission"
+                class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-7 py-3 rounded-3xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-base">
+                Tìm hiểu cách chúng tôi làm
+              </a>
+              <a href="/join-us/index.html"
+                class="inline-block bg-white/10 backdrop-blur-sm text-white px-7 py-3 rounded-3xl font-medium border-2 border-white/20 hover:bg-white/20 transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-base">
+                Đồng hành cùng chúng tôi
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Mission Section -->
-      <section id="mission" class="py-10 md:py-14 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <!-- Left: Image -->
-            <div class="order-2 md:order-1">
-              <div
-                class="overflow-hidden"
-                style="border-radius: 1rem 14rem 1rem 1rem"
-              >
-                <img
-                  src="/assets/images/mission.jpg"
-                  alt="Nông Dân Phát - Đồng hành cùng nông dân"
-                  class="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
+    <!-- Mission Section -->
+    <section id="mission" class="py-10 md:py-14 bg-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Image -->
+          <div class="order-2 md:order-1">
+            <div class="overflow-hidden" style="border-radius: 1rem 14rem 1rem 1rem">
+              <img src="/assets/images/mission.jpg" alt="Nông Dân Phát - Đồng hành cùng nông dân"
+                class="w-full h-full object-cover aspect-[4/3]" />
             </div>
+          </div>
 
-            <!-- Right: Content -->
-            <div class="order-1 md:order-2">
-              <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                <span class="text-[#AB7E31]">Nông Dân Phát</span> là ai?
-              </h2>
-              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                Nông nghiệp không phải một mô hình cố định, vì nông dân và cuộc
-                sống của họ cũng đa dạng. Chúng tôi làm việc với các tổ chức và
-                cộng đồng để mang đến giải pháp phát triển nông nghiệp phù hợp
-                với từng địa phương.
-              </p>
+          <!-- Right: Content -->
+          <div class="order-1 md:order-2">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              <span class="text-[#AB7E31]">Nông Dân Phát</span> là ai?
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Nông nghiệp không phải một mô hình cố định, vì nông dân và cuộc
+              sống của họ cũng đa dạng. Chúng tôi làm việc với các tổ chức và
+              cộng đồng để mang đến giải pháp phát triển nông nghiệp phù hợp
+              với từng địa phương.
+            </p>
 
-              <div class="space-y-6">
-                <!-- Item 1 -->
-                <div class="flex items-start gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-gray-700"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-900 mb-1">
-                      Doanh nghiệp khởi nghiệp vì nông dân và cộng đồng
-                    </h3>
-                    <p class="text-gray-600 text-sm">
-                      Đồng hành để nông dân tự làm chủ, không làm thay. Tạo ra
-                      giá trị kinh tế chân chính và bền vững.
-                    </p>
-                  </div>
+            <div class="space-y-6">
+              <!-- Item 1 -->
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
                 </div>
-
-                <!-- Item 2 -->
-                <div class="flex items-start gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-gray-700"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-900 mb-1">
-                      Kết nối tri thức – nguồn lực – thị trường
-                    </h3>
-                    <p class="text-gray-600 text-sm">
-                      Liên kết nông dân với doanh nghiệp, nhà đầu tư và thị
-                      trường tiêu thụ ổn định.
-                    </p>
-                  </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">
+                    Doanh nghiệp khởi nghiệp vì nông dân và cộng đồng
+                  </h3>
+                  <p class="text-gray-600 text-base">
+                    Đồng hành để nông dân tự làm chủ, không làm thay. Tạo ra
+                    giá trị kinh tế chân chính và bền vững.
+                  </p>
                 </div>
+              </div>
 
-                <!-- Item 3 -->
-                <div class="flex items-start gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-gray-700"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-gray-900 mb-1">
-                      Đồng hành dài hạn, không tìm cách đi nhanh
-                    </h3>
-                    <p class="text-gray-600 text-sm">
-                      Chúng tôi chọn đi đúng và bền. Lấy hiệu quả thực tế của
-                      nông dân làm thước đo thành công.
-                    </p>
-                  </div>
+              <!-- Item 2 -->
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">
+                    Kết nối tri thức – nguồn lực – thị trường
+                  </h3>
+                  <p class="text-gray-600 text-base">
+                    Liên kết nông dân với doanh nghiệp, nhà đầu tư và thị
+                    trường tiêu thụ ổn định.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">
+                    Đồng hành dài hạn, không tìm cách đi nhanh
+                  </h3>
+                  <p class="text-gray-600 text-base">
+                    Chúng tôi chọn đi đúng và bền. Lấy hiệu quả thực tế của
+                    nông dân làm thước đo thành công.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Why New Approach Section -->
-      <section class="py-10 md:py-14 bg-white">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-gray-900 mb-12">
-            Vì sao cần một cách làm mới?
+    <!-- Why New Approach Section -->
+    <section class="py-10 md:py-14 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
+          Vì sao cần một cách làm mới?
+        </h2>
+
+        <!-- Mobile: Embla Carousel -->
+        <div class="md:hidden relative">
+          <div id="embla-new-approach" class="overflow-hidden">
+            <div class="flex touch-pan-y gap-4">
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative" style="min-height: 400px">
+                  <img src="/assets/images/new-approach-1.jpg" alt="Sản xuất manh mún" class="w-full h-full object-cover absolute inset-0" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+                  <div class="relative z-10 px-6 py-6 flex flex-col justify-start">
+                    <h3 class="text-xl font-bold text-white mb-2 text-left">Sản xuất còn manh mún, thiếu liên kết</h3>
+                    <p class="text-base text-white">Nông dân sản xuất nhỏ lẻ, không có sự kết nối và hợp tác hiệu quả</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative" style="min-height: 400px">
+                  <img src="/assets/images/new-approach-2.jpg" alt="Giá cả bấp bênh" class="w-full h-full object-cover absolute inset-0" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+                  <div class="relative z-10 px-6 py-6 flex flex-col justify-start">
+                    <h3 class="text-xl font-bold text-white mb-2 text-left">Giá cả bấp bênh, phụ thuộc trung gian</h3>
+                    <p class="text-base text-white">Giá nông sản không ổn định, nông dân phụ thuộc vào các tầng trung gian</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative" style="min-height: 400px">
+                  <img src="/assets/images/new-approach-3.jpg" alt="Thiếu tri thức và vốn" class="w-full h-full object-cover absolute inset-0" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+                  <div class="relative z-10 px-6 py-6 flex flex-col justify-start">
+                    <h3 class="text-xl font-bold text-white mb-2 text-left">Thiếu tri thức, vốn và đầu ra ổn định</h3>
+                    <p class="text-base text-white">Nông dân thiếu kiến thức, nguồn vốn và thị trường tiêu thụ ổn định</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative" style="min-height: 400px">
+                  <img src="/assets/images/new-approach-4.jpg" alt="Người trẻ rời bỏ nông thôn" class="w-full h-full object-cover absolute inset-0" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+                  <div class="relative z-10 px-6 py-6 flex flex-col justify-start">
+                    <h3 class="text-xl font-bold text-white mb-2 text-left">Người trẻ rời bỏ nông thôn</h3>
+                    <p class="text-base text-white">Thế hệ trẻ không còn muốn gắn bó với nông nghiệp do thiếu cơ hội phát triển</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Prev/Next - Tailwind -->
+          <div class="flex justify-center gap-3 mt-4">
+            <button type="button" id="embla-new-approach-prev" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Trước">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button type="button" id="embla-new-approach-next" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Sau">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Desktop: Grid -->
+        <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative" style="min-height: 400px">
+            <img src="/assets/images/new-approach-1.jpg" alt="Sản xuất manh mún" class="w-full h-full object-cover absolute inset-0" />
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+            <div class="relative z-10 px-8 py-7 h-full flex flex-col justify-start">
+              <h3 class="text-2xl font-bold text-white mb-3 text-left">Sản xuất còn manh mún, thiếu liên kết</h3>
+              <p class="text-base text-white">Nông dân sản xuất nhỏ lẻ, không có sự kết nối và hợp tác hiệu quả</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative" style="min-height: 400px">
+            <img src="/assets/images/new-approach-2.jpg" alt="Giá cả bấp bênh" class="w-full h-full object-cover absolute inset-0" />
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+            <div class="relative z-10 px-8 py-7 h-full flex flex-col justify-start">
+              <h3 class="text-2xl font-bold text-white mb-3 text-left">Giá cả bấp bênh, phụ thuộc trung gian</h3>
+              <p class="text-base text-white">Giá nông sản không ổn định, nông dân phụ thuộc vào các tầng trung gian</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative" style="min-height: 400px">
+            <img src="/assets/images/new-approach-3.jpg" alt="Thiếu tri thức và vốn" class="w-full h-full object-cover absolute inset-0" />
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+            <div class="relative z-10 px-8 py-7 h-full flex flex-col justify-start">
+              <h3 class="text-2xl font-bold text-white mb-3 text-left">Thiếu tri thức, vốn và đầu ra ổn định</h3>
+              <p class="text-base text-white">Nông dân thiếu kiến thức, nguồn vốn và thị trường tiêu thụ ổn định</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative" style="min-height: 400px">
+            <img src="/assets/images/new-approach-4.jpg" alt="Người trẻ rời bỏ nông thôn" class="w-full h-full object-cover absolute inset-0" />
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"></div>
+            <div class="relative z-10 px-8 py-7 h-full flex flex-col justify-start">
+              <h3 class="text-2xl font-bold text-white mb-3 text-left">Người trẻ rời bỏ nông thôn</h3>
+              <p class="text-base text-white">Thế hệ trẻ không còn muốn gắn bó với nông nghiệp do thiếu cơ hội phát triển</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <p class="text-lg md:text-xl font-semibold text-[#AB7E31] italic max-w-xl mx-auto text-center">
+            &ldquo;Nông nghiệp chỉ bền khi nông dân được trao Trí, được đồng
+            hành bằng Thiện và tạo ra giá trị Tốt.&rdquo;
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-10 md:py-14" style="background-color: #4b2700">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-white mb-4 text-center">
+            <span class="text-[#AB7E31]">Nông Dân Phát</span> đang làm gì?
           </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card 1 -->
-            <div
-              class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative"
-              style="min-height: 400px"
-            >
-              <img
-                src="/assets/images/new-approach-1.jpg"
-                alt="Sản xuất manh mún"
-                class="w-full h-full object-cover absolute inset-0"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"
-              ></div>
-              <div
-                class="relative z-10 px-8 py-7 h-full flex flex-col justify-start"
-              >
-                <h3 class="text-2xl font-bold text-white mb-3 text-left">
-                  Sản xuất còn manh mún, thiếu liên kết
-                </h3>
-                <p class="text-base text-white text-left">
-                  Nông dân sản xuất nhỏ lẻ, không có sự kết nối và hợp tác hiệu
-                  quả
-                </p>
+          <p class="text-white text-base max-w-2xl mx-auto text-center">
+            Đồng hành bằng hành động, không bằng khẩu hiệu.
+          </p>
+        </div>
+        <!-- Mobile: Embla Carousel -->
+        <div class="md:hidden relative">
+          <div id="embla-what-we-do" class="overflow-hidden">
+            <div class="flex touch-pan-y gap-4">
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full">
+                  <div class="mb-4">
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+                    Khai mở <span class="text-[#AB7E31]">TRÍ</span>
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Tư duy sản xuất gắn với thị trường. Kết hợp tri thức bản địa và
+                    khoa học. Giúp nông dân hiểu mình đang làm gì và vì sao.
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative"
-              style="min-height: 400px"
-            >
-              <img
-                src="/assets/images/new-approach-2.jpg"
-                alt="Giá cả bấp bênh"
-                class="w-full h-full object-cover absolute inset-0"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"
-              ></div>
-              <div
-                class="relative z-10 px-8 py-7 h-full flex flex-col justify-start"
-              >
-                <h3 class="text-2xl font-bold text-white mb-3 text-left">
-                  Giá cả bấp bênh, phụ thuộc trung gian
-                </h3>
-                <p class="text-base text-white text-left">
-                  Giá nông sản không ổn định, nông dân phụ thuộc vào các tầng
-                  trung gian
-                </p>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full">
+                  <div class="mb-4">
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+                    Kết nối <span class="text-[#AB7E31]">THIỆN</span>
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Liên kết nông dân – doanh nghiệp – nhà đầu tư. Minh bạch, tôn
+                    trọng, cùng nâng đỡ. Không ép buộc, tôn trọng sự tự nguyện.
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-              class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative"
-              style="min-height: 400px"
-            >
-              <img
-                src="/assets/images/new-approach-3.jpg"
-                alt="Thiếu tri thức và vốn"
-                class="w-full h-full object-cover absolute inset-0"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"
-              ></div>
-              <div
-                class="relative z-10 px-8 py-7 h-full flex flex-col justify-start"
-              >
-                <h3 class="text-2xl font-bold text-white mb-3 text-left">
-                  Thiếu tri thức, vốn và đầu ra ổn định
-                </h3>
-                <p class="text-base text-white text-left">
-                  Nông dân thiếu kiến thức, nguồn vốn và thị trường tiêu thụ ổn
-                  định
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-              class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative"
-              style="min-height: 400px"
-            >
-              <img
-                src="/assets/images/new-approach-4.jpg"
-                alt="Người trẻ rời bỏ nông thôn"
-                class="w-full h-full object-cover absolute inset-0"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-transparent"
-              ></div>
-              <div
-                class="relative z-10 px-8 py-7 h-full flex flex-col justify-start"
-              >
-                <h3 class="text-2xl font-bold text-white mb-3 text-left">
-                  Người trẻ rời bỏ nông thôn
-                </h3>
-                <p class="text-base text-white text-left">
-                  Thế hệ trẻ không còn muốn gắn bó với nông nghiệp do thiếu cơ
-                  hội phát triển
-                </p>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <div class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full">
+                  <div class="mb-4">
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+                    Tạo giá trị <span class="text-[#AB7E31]">TỐT</span>
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Nâng chất lượng nông sản từ gốc. Gia tăng giá trị qua chuỗi và
+                    thị trường. Giá trị tạo ra được kiểm chứng bằng thực tế.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="mt-16 text-center">
-            <p
-              class="text-lg md:text-xl font-semibold text-[#AB7E31] italic max-w-xl mx-auto text-center"
-            >
-              &ldquo;Nông nghiệp chỉ bền khi nông dân được trao Trí, được đồng
-              hành bằng Thiện và tạo ra giá trị Tốt.&rdquo;
+          <div class="flex justify-center gap-3 mt-4">
+            <button type="button" id="embla-what-we-do-prev" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Trước">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button type="button" id="embla-what-we-do-next" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Sau">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Desktop: Grid -->
+        <div class="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <!-- Khối 1: Khai mở TRÍ -->
+          <div class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Khai mở <span class="text-[#AB7E31]">TRÍ</span>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Tư duy sản xuất gắn với thị trường. Kết hợp tri thức bản địa và
+              khoa học. Giúp nông dân hiểu mình đang làm gì và vì sao.
+            </p>
+          </div>
+
+          <!-- Khối 2: Kết nối THIỆN -->
+          <div class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Kết nối <span class="text-[#AB7E31]">THIỆN</span>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Liên kết nông dân – doanh nghiệp – nhà đầu tư. Minh bạch, tôn
+              trọng, cùng nâng đỡ. Không ép buộc, tôn trọng sự tự nguyện.
+            </p>
+          </div>
+
+          <!-- Khối 3: Tạo giá trị TỐT -->
+          <div class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Tạo giá trị <span class="text-[#AB7E31]">TỐT</span>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Nâng chất lượng nông sản từ gốc. Gia tăng giá trị qua chuỗi và
+              thị trường. Giá trị tạo ra được kiểm chứng bằng thực tế.
             </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- What We Do Section -->
-      <section class="py-10 md:py-14 bg-gray-100">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              <span class="text-[#AB7E31]">Nông Dân Phát</span> đang làm gì?
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-              Đồng hành bằng hành động, không bằng khẩu hiệu.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <!-- Khối 1: Khai mở TRÍ -->
-            <div
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Khai mở <span class="text-[#AB7E31]">TRÍ</span>
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Tư duy sản xuất gắn với thị trường. Kết hợp tri thức bản địa và
-                khoa học. Giúp nông dân hiểu mình đang làm gì và vì sao.
-              </p>
-            </div>
-
-            <!-- Khối 2: Kết nối THIỆN -->
-            <div
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Kết nối <span class="text-[#AB7E31]">THIỆN</span>
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Liên kết nông dân – doanh nghiệp – nhà đầu tư. Minh bạch, tôn
-                trọng, cùng nâng đỡ. Không ép buộc, tôn trọng sự tự nguyện.
-              </p>
-            </div>
-
-            <!-- Khối 3: Tạo giá trị TỐT -->
-            <div
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Tạo giá trị <span class="text-[#AB7E31]">TỐT</span>
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Nâng chất lượng nông sản từ gốc. Gia tăng giá trị qua chuỗi và
-                thị trường. Giá trị tạo ra được kiểm chứng bằng thực tế.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- News Preview Section -->
-      <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="mb-8">
-            <div class="mb-4">
-              <div
-                class="flex flex-col md:flex-row md:justify-between md:items-center gap-4"
-              >
-                <h2
-                  class="text-3xl font-bold text-gray-900 text-center md:text-left"
-                >
-                  Chia sẻ & Xin ý kiến
-                </h2>
-                <a
-                  href="/insights/index.html"
-                  class="text-[#AB7E31] hover:text-[#BE8F2B] font-medium text-center md:text-right whitespace-nowrap"
-                  >Xem thêm ></a
-                >
-              </div>
-            </div>
-            <p
-              class="text-center md:text-left text-gray-600 text-sm md:text-base"
-            >
-              Góc nhìn, trải nghiệm và những điều còn trăn trở từ thực tế.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-6">
-            <article
-              class="bg-white rounded-xl overflow-hidden flex flex-col h-full"
-            >
-              <div class="h-64 overflow-hidden rounded-3xl">
-                <img src="/assets/images/insights/nong-dan-phat-cai-gi.jpg"
-                alt="Nông Dân Phát – "Phát" cái gì?" class="w-full h-full
-                object-cover" />
-              </div>
-              <div class="p-4 flex flex-col flex-grow">
-                <span class="text-sm text-gray-500">1 Tháng 1, 2026</span>
-                <h3
-                  class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem]"
-                  title="Nông Dân Phát – “Phát” cái gì?"
-                >
-                  Nông Dân Phát – “Phát” cái gì?
-                </h3>
-                <p
-                  class="text-gray-600 line-clamp-2 min-h-[3rem]"
-                  title="Chương trình hỗ trợ nông dân tiếp cận và áp dụng các công nghệ nông nghiệp hiện đại để nâng cao năng suất và chất lượng sản phẩm."
-                >
-                  Nông Dân Phát không chỉ hỗ trợ nông dân làm ra sản phẩm, mà
-                  đồng hành để nông dân phát triển toàn diện: từ tư duy, năng
-                  lực đến vị thế và đạo đức làm nông.
-                </p>
-                <a
-                  href="/insights/nong-dan-phat-phat-cai-gi.html"
-                  class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium"
-                  >Đọc thêm ></a
-                >
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-xl overflow-hidden flex flex-col h-full"
-            >
-              <div class="h-64 overflow-hidden rounded-3xl">
-                <img
-                  src="/assets/images/insights/phat-tri-tu-duy-lam-nong.jpg"
-                  alt="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-4 flex flex-col flex-grow">
-                <span class="text-sm text-gray-500">1 Tháng 1, 2026</span>
-                <h3
-                  class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem]"
-                  title="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm"
-                >
-                  Phát Trí – Khi nông dân hiểu rõ việc mình đang làm
-                </h3>
-                <p
-                  class="text-gray-600 line-clamp-2 min-h-[3rem]"
-                  title="Giới thiệu dòng sản phẩm phân bón hữu cơ cao cấp, thân thiện với môi trường, giúp cây trồng phát triển khỏe mạnh và bền vững."
-                >
-                  Phát triển bền vững bắt đầu từ việc nông dân hiểu trồng gì, vì
-                  sao trồng, bán cho ai và lời lỗ thế nào. Thoát khỏi làm theo
-                  thói quen và may rủi.
-                </p>
-                <a
-                  href="/insights/phat-tri-tu-duy-lam-nong.html"
-                  class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium"
-                  >Đọc thêm ></a
-                >
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-xl overflow-hidden flex flex-col h-full"
-            >
-              <div class="h-64 overflow-hidden rounded-3xl">
-                <img
-                  src="/assets/images/insights/phat-luc-phat-tai-lam-nong-co-loi.jpg"
-                  alt="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-4 flex flex-col flex-grow">
-                <span class="text-sm text-gray-500">1 Tháng 1, 2026</span>
-                <h3
-                  class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem]"
-                  title="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống"
-                >
-                  Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống
-                </h3>
-                <p
-                  class="text-gray-600 line-clamp-2 min-h-[3rem]"
-                  title="Nhiều cơ hội việc làm hấp dẫn cho lao động nông nghiệp tại các vườn cây, trang trại trên khắp cả nước với mức lương cạnh tranh."
-                >
-                  Giảm chi phí đầu vào, tăng hiệu quả lao động và có đầu ra ổn
-                  định để nông dân có thể tích lũy, tái đầu tư và sống được bằng
-                  nghề nông.
-                </p>
-                <a
-                  href="/insights/phat-luc-phat-tai-lam-nong-co-loi.html"
-                  class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium"
-                  >Đọc thêm ></a
-                >
-              </div>
-            </article>
-          </div>
-          <div class="mt-12 text-center">
-            <a
-              href="/insights/index.html#xin-y-kien"
-              class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-3xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-sm md:text-base"
-            >
-              Xin ý kiến của bạn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Recruitment Preview Section -->
-      <section class="py-10 md:py-14" style="background-color: #4b2700">
-        <div class="container mx-auto px-4">
-          <div class="mb-8">
-            <div class="mb-4">
-              <div
-                class="flex flex-col md:flex-row md:justify-between md:items-center gap-4"
-              >
-                <h2
-                  class="text-3xl font-bold text-white text-center md:text-left"
-                >
-                  Tuyển dụng & Đồng hành
-                </h2>
-                <a
-                  href="/join-us/index.html"
-                  class="text-white hover:text-gray-200 font-medium text-center md:text-right whitespace-nowrap"
-                  >Xem thêm ></a
-                >
-              </div>
-            </div>
-            <p class="text-center md:text-left text-white text-sm md:text-base">
-              Đồng hành dài hạn cùng nông nghiệp, không chỉ là một công việc.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <a
-              href="/join-us/full-time/index.html"
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Đồng hành toàn thời gian / bán thời gian
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Dành cho những người muốn gắn bó và tham gia trực tiếp vào các
-                hoạt động sản xuất, vận hành và phát triển chuỗi giá trị cùng
-                <span class="text-[#AB7E31]">Nông Dân Phát</span> trong từng
-                giai đoạn cụ thể.
-              </p>
-              <span class="text-[#AB7E31] font-medium text-left mt-auto"
-                >Tìm hiểu thêm ></span
-              >
-            </a>
-            <a
-              href="/join-us/partners/index.html"
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Cộng sự / Đồng hành dài hạn
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Phù hợp với những người có chuyên môn, tư duy khởi nghiệp và
-                mong muốn cùng xây dựng
-                <span class="text-[#AB7E31]">Nông Dân Phát</span> từ giai đoạn
-                sớm.
-              </p>
-              <p class="text-gray-600 text-left mb-4">
-                Không chỉ làm việc, mà cùng chia sẻ trách nhiệm, giá trị và
-                thành quả trên chặng đường dài.
-              </p>
-              <span class="text-[#AB7E31] font-medium text-left mt-auto"
-                >Tìm hiểu thêm ></span
-              >
-            </a>
-            <a
-              href="/join-us/internship/index.html"
-              class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105"
-            >
-              <div class="mb-6">
-                <svg
-                  class="w-10 h-10 text-gray-900"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
-                Thực tập & trải nghiệm thực tế
-              </h3>
-              <p class="text-gray-600 text-left mb-4">
-                Dành cho sinh viên và người mới vào ngành muốn trải nghiệm môi
-                trường nông nghiệp thực tế, học từ hiện trường, con người và
-                công việc cụ thể, không chỉ qua lý thuyết.
-              </p>
-              <span class="text-[#AB7E31] font-medium text-left mt-auto"
-                >Tìm hiểu thêm ></span
-              >
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Commitment Section -->
-      <section class="py-10 md:py-14 bg-gray-100">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              Cam kết của <span class="text-[#AB7E31]">Nông Dân Phát</span>
-            </h2>
-          </div>
-          <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <!-- Item 1 -->
-            <div class="bg-white p-6 rounded-2xl">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-gray-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900 mb-1">
-                    Minh bạch trong mọi hoạt động
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="bg-white p-6 rounded-2xl">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-gray-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900 mb-1">
-                    Tôn trọng pháp luật và cộng đồng địa phương
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="bg-white p-6 rounded-2xl">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-gray-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900 mb-1">
-                    Lấy hiệu quả thực tế của nông dân làm thước đo
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="bg-white p-6 rounded-2xl">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-gray-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900 mb-1">
-                    Không đánh đổi môi trường và đạo đức để tăng trưởng
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- App Download Section -->
-      <section
-        class="relative overflow-hidden py-10 md:py-16"
-        style="display: none !important"
-      >
-        <!-- Background Image -->
-        <div class="absolute inset-0">
-          <img
-            src="/assets/images/iphone-screen.png"
-            alt="iPhone screen background"
-            class="w-full h-full object-cover"
-          />
-          <!-- Dark Overlay for text readability -->
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"
-          ></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-5xl mx-auto">
-            <!-- Title and Description -->
-            <div class="text-center mb-12">
-              <h2 class="text-3xl font-bold text-white mb-4">
-                Ứng dụng <span class="text-[#ffb83b]">Nông Dân Phát</span>
+    <!-- News Preview Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="mb-8">
+          <div class="mb-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+              <h2 class="text-3xl font-bold text-gray-900 text-center md:text-left">
+                Chia sẻ
               </h2>
-              <p class="text-lg text-white max-w-2xl mx-auto">
-                Ứng dụng hỗ trợ nông dân và đối tác trong quá trình đồng hành,
-                kết nối và theo dõi các hoạt động thực tế.
-              </p>
+              <a href="/insights/index.html"
+                class="text-[#AB7E31] hover:text-[#BE8F2B] font-medium text-center md:text-right whitespace-nowrap">Xem
+                thêm ></a>
             </div>
+          </div>
+          <p class="text-center md:text-left text-gray-600 text-base">
+            Góc nhìn, trải nghiệm và những điều còn trăn trở từ thực tế.
+          </p>
+        </div>
+        <!-- Mobile: Embla Carousel -->
+        <div class="md:hidden relative">
+          <div id="embla-news-preview" class="overflow-hidden">
+            <div class="flex touch-pan-y gap-4">
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+                  <div class="h-48 overflow-hidden rounded-2xl">
+                    <img src="/assets/images/insights/nong-dan-phat-cai-gi.jpg" alt="Nông Dân Phát – &quot;Phát&quot; cái gì?" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left"
+                title="Nông Dân Phát – “Phát” cái gì?">
+                Nông Dân Phát – “Phát” cái gì?
+              </h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]"
+                title="Chương trình hỗ trợ nông dân tiếp cận và áp dụng các công nghệ nông nghiệp hiện đại để nâng cao năng suất và chất lượng sản phẩm.">
+                Nông Dân Phát không chỉ hỗ trợ nông dân làm ra sản phẩm, mà
+                đồng hành để nông dân phát triển toàn diện: từ tư duy, năng
+                lực đến vị thế và đạo đức làm nông.
+              </p>
+              <a href="/insights/nong-dan-phat-phat-cai-gi.html"
+                class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+          <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+            <div class="h-48 overflow-hidden rounded-2xl">
+              <img src="/assets/images/insights/phat-tri-tu-duy-lam-nong.jpg"
+                alt="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left"
+                title="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm">
+                Phát Trí – Khi nông dân hiểu rõ việc mình đang làm
+              </h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]"
+                title="Giới thiệu dòng sản phẩm phân bón hữu cơ cao cấp, thân thiện với môi trường, giúp cây trồng phát triển khỏe mạnh và bền vững.">
+                Phát triển bền vững bắt đầu từ việc nông dân hiểu trồng gì, vì
+                sao trồng, bán cho ai và lời lỗ thế nào. Thoát khỏi làm theo
+                thói quen và may rủi.
+              </p>
+              <a href="/insights/phat-tri-tu-duy-lam-nong.html"
+                class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+          <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+            <div class="h-48 overflow-hidden rounded-2xl">
+              <img src="/assets/images/insights/phat-luc-phat-tai-lam-nong-co-loi.jpg"
+                alt="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left"
+                title="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống">
+                Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống
+              </h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]"
+                title="Nhiều cơ hội việc làm hấp dẫn cho lao động nông nghiệp tại các vườn cây, trang trại trên khắp cả nước với mức lương cạnh tranh.">
+                Giảm chi phí đầu vào, tăng hiệu quả lao động và có đầu ra ổn
+                định để nông dân có thể tích lũy, tái đầu tư và sống được bằng
+                nghề nông.
+              </p>
+              <a href="/insights/phat-luc-phat-tai-lam-nong-co-loi.html"
+                class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-3 mt-4">
+            <button type="button" id="embla-news-preview-prev" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Trước">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button type="button" id="embla-news-preview-next" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition shadow-sm" aria-label="Sau">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Desktop: Grid -->
+        <div class="hidden md:grid md:grid-cols-3 gap-6">
+          <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+            <div class="h-48 overflow-hidden rounded-2xl">
+              <img src="/assets/images/insights/nong-dan-phat-cai-gi.jpg" alt="Nông Dân Phát – &quot;Phát&quot; cái gì?" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left" title="Nông Dân Phát – &quot;Phát&quot; cái gì?">Nông Dân Phát – "Phát" cái gì?</h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]">Nông Dân Phát không chỉ hỗ trợ nông dân làm ra sản phẩm, mà đồng hành để nông dân phát triển toàn diện: từ tư duy, năng lực đến vị thế và đạo đức làm nông.</p>
+              <a href="/insights/nong-dan-phat-phat-cai-gi.html" class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+          <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+            <div class="h-48 overflow-hidden rounded-2xl">
+              <img src="/assets/images/insights/phat-tri-tu-duy-lam-nong.jpg" alt="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left" title="Phát Trí – Khi nông dân hiểu rõ việc mình đang làm">Phát Trí – Khi nông dân hiểu rõ việc mình đang làm</h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]">Phát triển bền vững bắt đầu từ việc nông dân hiểu trồng gì, vì sao trồng, bán cho ai và lời lỗ thế nào. Thoát khỏi làm theo thói quen và may rủi.</p>
+              <a href="/insights/phat-tri-tu-duy-lam-nong.html" class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+          <article class="bg-white rounded-3xl overflow-hidden flex flex-col h-full p-4">
+            <div class="h-48 overflow-hidden rounded-2xl">
+              <img src="/assets/images/insights/phat-luc-phat-tai-lam-nong-co-loi.jpg" alt="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <span class="text-base text-gray-500">1 Tháng 1, 2026</span>
+              <h3 class="text-xl font-semibold mt-2 mb-2 line-clamp-2 min-h-[3.5rem] text-left" title="Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống">Phát Lực – Phát Tài: Làm nông có lời thật, không chỉ đủ sống</h3>
+              <p class="text-gray-600 line-clamp-2 min-h-[3rem]">Giảm chi phí đầu vào, tăng hiệu quả lao động và có đầu ra ổn định để nông dân có thể tích lũy, tái đầu tư và sống được bằng nghề nông.</p>
+              <a href="/insights/phat-luc-phat-tai-lam-nong-co-loi.html" class="text-[#AB7E31] hover:text-[#BE8F2B] mt-4 inline-block font-medium">Đọc thêm ></a>
+            </div>
+          </article>
+        </div>
+        <div class="mt-12 text-center">
+          <a href="/insights/index.html#xin-y-kien"
+            class="inline-block bg-gradient-to-r from-[#AB7E31] to-[#BE8F2B] text-white px-8 py-3 rounded-3xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 text-center text-base">
+            Xin ý kiến của bạn
+          </a>
+        </div>
+      </div>
+    </section>
 
-            <!-- QR Codes Section -->
-            <div class="max-w-2xl mx-auto">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- iOS QR Code -->
-                <div
-                  class="bg-white rounded-3xl px-4 py-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center"
-                >
+    <!-- Recruitment Preview Section -->
+    <section class="py-10 md:py-14" style="background-color: #4b2700">
+      <div class="container mx-auto px-4">
+        <div class="mb-8">
+          <div class="mb-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+              <h2 class="text-3xl font-bold text-white text-center md:text-left">
+                Tuyển dụng
+              </h2>
+              <a href="/join-us/index.html"
+                class="text-white hover:text-gray-200 font-medium text-center md:text-right whitespace-nowrap">Xem thêm
+                ></a>
+            </div>
+          </div>
+          <p class="text-center md:text-left text-white text-base">
+            Đồng hành dài hạn cùng nông nghiệp, không chỉ là một công việc.
+          </p>
+        </div>
+        <!-- Mobile: Embla Carousel -->
+        <div class="md:hidden relative">
+          <div id="embla-recruitment-preview" class="overflow-hidden">
+            <div class="flex touch-pan-y gap-4">
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <a href="/join-us/full-time/index.html" class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full block">
                   <div class="mb-4">
-                    <img
-                      src="/assets/images/qr-code.png"
-                      alt="QR Code tải ứng dụng iOS"
-                      class="w-32 h-32 mx-auto"
-                    />
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                   </div>
-                  <div class="text-center">
-                    <h3 class="font-bold text-gray-900 mb-2">
-                      Tải ứng dụng iOS
-                    </h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">Đồng hành toàn thời gian / bán thời gian</h3>
+                  <p class="text-gray-600 mb-4 text-left">Dành cho những người muốn gắn bó và tham gia trực tiếp vào các hoạt động sản xuất, vận hành và phát triển chuỗi giá trị cùng <span class="text-[#AB7E31]">Nông Dân Phát</span> trong từng giai đoạn cụ thể.</p>
+                  <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+                </a>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <a href="/join-us/partners/index.html" class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full block">
+                  <div class="mb-4">
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
                   </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">Cộng sự / Đồng hành dài hạn</h3>
+                  <p class="text-gray-600 mb-4 text-left">Phù hợp với những người có chuyên môn, tư duy khởi nghiệp và mong muốn cùng xây dựng <span class="text-[#AB7E31]">Nông Dân Phát</span> từ giai đoạn sớm.</p>
+                  <p class="text-gray-600 mb-4 text-left">Không chỉ làm việc, mà cùng chia sẻ trách nhiệm, giá trị và thành quả trên chặng đường dài.</p>
+                  <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+                </a>
+              </div>
+              <div class="flex-[0_0_85%] min-w-0 shrink-0">
+                <a href="/join-us/internship/index.html" class="bg-white p-6 rounded-3xl transition-all duration-300 flex flex-col h-full block">
+                  <div class="mb-4">
+                    <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">Thực tập & trải nghiệm thực tế</h3>
+                  <p class="text-gray-600 mb-4 text-left">Dành cho sinh viên và người mới vào ngành muốn trải nghiệm môi trường nông nghiệp thực tế, học từ hiện trường, con người và công việc cụ thể, không chỉ qua lý thuyết.</p>
+                  <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-3 mt-4">
+            <button type="button" id="embla-recruitment-preview-prev" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white hover:bg-white/30 transition shadow-sm" aria-label="Trước">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button type="button" id="embla-recruitment-preview-next" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white hover:bg-white/30 transition shadow-sm" aria-label="Sau">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Desktop: Grid -->
+        <div class="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <a href="/join-us/full-time/index.html"
+            class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Đồng hành toàn thời gian / bán thời gian
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Dành cho những người muốn gắn bó và tham gia trực tiếp vào các
+              hoạt động sản xuất, vận hành và phát triển chuỗi giá trị cùng
+              <span class="text-[#AB7E31]">Nông Dân Phát</span> trong từng
+              giai đoạn cụ thể.
+            </p>
+            <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+          </a>
+          <a href="/join-us/partners/index.html"
+            class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Cộng sự / Đồng hành dài hạn
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Phù hợp với những người có chuyên môn, tư duy khởi nghiệp và
+              mong muốn cùng xây dựng
+              <span class="text-[#AB7E31]">Nông Dân Phát</span> từ giai đoạn
+              sớm.
+            </p>
+            <p class="text-gray-600 mb-4">
+              Không chỉ làm việc, mà cùng chia sẻ trách nhiệm, giá trị và
+              thành quả trên chặng đường dài.
+            </p>
+            <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+          </a>
+          <a href="/join-us/internship/index.html"
+            class="bg-white p-8 rounded-3xl transition-all duration-300 flex flex-col transform hover:scale-105">
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-left">
+              Thực tập & trải nghiệm thực tế
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Dành cho sinh viên và người mới vào ngành muốn trải nghiệm môi
+              trường nông nghiệp thực tế, học từ hiện trường, con người và
+              công việc cụ thể, không chỉ qua lý thuyết.
+            </p>
+            <span class="text-[#AB7E31] font-medium text-left mt-auto">Tìm hiểu thêm ></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section class="py-10 md:py-14 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+            Cam kết của <span class="text-[#AB7E31]">Nông Dân Phát</span>
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <!-- Item 1 -->
+          <div class="bg-white p-6 rounded-2xl">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">
+                  Minh bạch trong mọi hoạt động
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-white p-6 rounded-2xl">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">
+                  Tôn trọng pháp luật và cộng đồng địa phương
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-white p-6 rounded-2xl">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">
+                  Lấy hiệu quả thực tế của nông dân làm thước đo
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bg-white p-6 rounded-2xl">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">
+                  Không đánh đổi môi trường và đạo đức để tăng trưởng
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="relative overflow-hidden py-10 md:py-16" style="display: none !important">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="/assets/images/iphone-screen.png" alt="iPhone screen background" class="w-full h-full object-cover" />
+        <!-- Dark Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto">
+          <!-- Title and Description -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Ứng dụng <span class="text-[#ffb83b]">Nông Dân Phát</span>
+            </h2>
+            <p class="text-lg text-white max-w-2xl mx-auto">
+              Ứng dụng hỗ trợ nông dân và đối tác trong quá trình đồng hành,
+              kết nối và theo dõi các hoạt động thực tế.
+            </p>
+          </div>
+
+          <!-- QR Codes Section -->
+          <div class="max-w-2xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- iOS QR Code -->
+              <div
+                class="bg-white rounded-3xl px-4 py-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                <div class="mb-4">
+                  <img src="/assets/images/qr-code.png" alt="QR Code tải ứng dụng iOS" class="w-32 h-32 mx-auto" />
                 </div>
+                <div class="text-center">
+                  <h3 class="font-bold text-gray-900 mb-2">
+                    Tải ứng dụng iOS
+                  </h3>
+                </div>
+              </div>
 
-                <!-- Android QR Code -->
-                <div
-                  class="bg-white rounded-3xl px-4 py-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center"
-                >
-                  <div class="mb-4">
-                    <img
-                      src="/assets/images/qr-code.png"
-                      alt="QR Code tải ứng dụng Android"
-                      class="w-32 h-32 mx-auto"
-                    />
-                  </div>
-                  <div class="text-center">
-                    <h3 class="font-bold text-gray-900 mb-2">
-                      Tải ứng dụng Android
-                    </h3>
-                  </div>
+              <!-- Android QR Code -->
+              <div
+                class="bg-white rounded-3xl px-4 py-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                <div class="mb-4">
+                  <img src="/assets/images/qr-code.png" alt="QR Code tải ứng dụng Android" class="w-32 h-32 mx-auto" />
+                </div>
+                <div class="text-center">
+                  <h3 class="font-bold text-gray-900 mb-2">
+                    Tải ứng dụng Android
+                  </h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- Footer placeholder - will be loaded dynamically -->
-    <div id="footer-placeholder"></div>
+  <!-- Footer placeholder - will be loaded dynamically -->
+  <div id="footer-placeholder"></div>
 
-    <!-- Load header and footer -->
-    <script src="/load-header-footer.js"></script>
+  <!-- Embla Carousel -->
+  <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+  <script>
+    (function () {
+      var viewport = document.getElementById('embla-new-approach');
+      if (!viewport || typeof EmblaCarousel === 'undefined') return;
 
-    <!-- Smooth scroll enhancement -->
-    <script>
-      // Custom smooth scroll function with easing
-      function smoothScrollTo(target, duration = 800) {
-        const headerHeight = 64; // 4rem = 64px
-        const targetPosition =
-          target.getBoundingClientRect().top +
-          window.pageYOffset -
-          headerHeight;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
+      var emblaApi = null;
+      var mobileQuery = window.matchMedia('(max-width: 767px)'); // Tailwind md = 768px
 
-        // Easing function for smooth animation (easeInOutCubic)
-        function easeInOutCubic(t) {
-          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-        }
-
-        function animation(currentTime) {
-          if (startTime === null) startTime = currentTime;
-          const timeElapsed = currentTime - startTime;
-          const progress = Math.min(timeElapsed / duration, 1);
-          const ease = easeInOutCubic(progress);
-
-          window.scrollTo(0, startPosition + distance * ease);
-
-          if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
-          }
-        }
-
-        requestAnimationFrame(animation);
+      function initEmbla() {
+        if (emblaApi) return;
+        emblaApi = EmblaCarousel(viewport, {
+          loop: false,
+          align: 'start',
+          containScroll: 'trimSnaps',
+          dragFree: false
+        });
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        // Handle all anchor links with smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href !== "#" && href.length > 1) {
-              e.preventDefault();
-              const target = document.querySelector(href);
-              if (target) {
-                smoothScrollTo(target, 1000); // 1000ms = 1 second for smooth scroll
-              }
+      function destroyEmbla() {
+        if (!emblaApi) return;
+        emblaApi.destroy();
+        emblaApi = null;
+      }
+
+      function onMatch() {
+        if (mobileQuery.matches) initEmbla();
+        else destroyEmbla();
+      }
+
+      function setupButtons() {
+        var prevBtn = document.getElementById('embla-new-approach-prev');
+        var nextBtn = document.getElementById('embla-new-approach-next');
+        if (prevBtn) prevBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollPrev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollNext(); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          setupButtons();
+          onMatch();
+          mobileQuery.addEventListener('change', onMatch);
+        });
+      } else {
+        setupButtons();
+        onMatch();
+        mobileQuery.addEventListener('change', onMatch);
+      }
+    })();
+
+    (function () {
+      var viewport = document.getElementById('embla-what-we-do');
+      if (!viewport || typeof EmblaCarousel === 'undefined') return;
+      var emblaApi = null;
+      var mobileQuery = window.matchMedia('(max-width: 767px)');
+      function initEmbla() {
+        if (emblaApi) return;
+        emblaApi = EmblaCarousel(viewport, { loop: false, align: 'start', containScroll: 'trimSnaps', dragFree: false });
+      }
+      function destroyEmbla() {
+        if (!emblaApi) return;
+        emblaApi.destroy();
+        emblaApi = null;
+      }
+      function onMatch() {
+        if (mobileQuery.matches) initEmbla();
+        else destroyEmbla();
+      }
+      function setupButtons() {
+        var prevBtn = document.getElementById('embla-what-we-do-prev');
+        var nextBtn = document.getElementById('embla-what-we-do-next');
+        if (prevBtn) prevBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollPrev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollNext(); });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          setupButtons();
+          onMatch();
+          mobileQuery.addEventListener('change', onMatch);
+        });
+      } else {
+        setupButtons();
+        onMatch();
+        mobileQuery.addEventListener('change', onMatch);
+      }
+    })();
+
+    (function () {
+      var viewport = document.getElementById('embla-news-preview');
+      if (!viewport || typeof EmblaCarousel === 'undefined') return;
+      var emblaApi = null;
+      var mobileQuery = window.matchMedia('(max-width: 767px)');
+      function initEmbla() {
+        if (emblaApi) return;
+        emblaApi = EmblaCarousel(viewport, { loop: false, align: 'start', containScroll: 'trimSnaps', dragFree: false });
+      }
+      function destroyEmbla() {
+        if (!emblaApi) return;
+        emblaApi.destroy();
+        emblaApi = null;
+      }
+      function onMatch() {
+        if (mobileQuery.matches) initEmbla();
+        else destroyEmbla();
+      }
+      function setupButtons() {
+        var prevBtn = document.getElementById('embla-news-preview-prev');
+        var nextBtn = document.getElementById('embla-news-preview-next');
+        if (prevBtn) prevBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollPrev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollNext(); });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          setupButtons();
+          onMatch();
+          mobileQuery.addEventListener('change', onMatch);
+        });
+      } else {
+        setupButtons();
+        onMatch();
+        mobileQuery.addEventListener('change', onMatch);
+      }
+    })();
+
+    (function () {
+      var viewport = document.getElementById('embla-recruitment-preview');
+      if (!viewport || typeof EmblaCarousel === 'undefined') return;
+      var emblaApi = null;
+      var mobileQuery = window.matchMedia('(max-width: 767px)');
+      function initEmbla() {
+        if (emblaApi) return;
+        emblaApi = EmblaCarousel(viewport, { loop: false, align: 'start', containScroll: 'trimSnaps', dragFree: false });
+      }
+      function destroyEmbla() {
+        if (!emblaApi) return;
+        emblaApi.destroy();
+        emblaApi = null;
+      }
+      function onMatch() {
+        if (mobileQuery.matches) initEmbla();
+        else destroyEmbla();
+      }
+      function setupButtons() {
+        var prevBtn = document.getElementById('embla-recruitment-preview-prev');
+        var nextBtn = document.getElementById('embla-recruitment-preview-next');
+        if (prevBtn) prevBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollPrev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { if (emblaApi) emblaApi.scrollNext(); });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          setupButtons();
+          onMatch();
+          mobileQuery.addEventListener('change', onMatch);
+        });
+      } else {
+        setupButtons();
+        onMatch();
+        mobileQuery.addEventListener('change', onMatch);
+      }
+    })();
+  </script>
+  <!-- Load header and footer -->
+  <script src="/load-header-footer.js"></script>
+
+  <!-- Smooth scroll enhancement -->
+  <script>
+    // Custom smooth scroll function with easing
+    function smoothScrollTo(target, duration = 800) {
+      const headerHeight = 64; // 4rem = 64px
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      // Easing function for smooth animation (easeInOutCubic)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Handle all anchor links with smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#" && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              smoothScrollTo(target, 1000); // 1000ms = 1 second for smooth scroll
             }
-          });
+          }
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

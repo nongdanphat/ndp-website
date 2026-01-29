@@ -9,6 +9,7 @@
 
 /* Smooth scroll behavior */
 html {
+  font-size: 1.125rem; /* 18px base font size */
   scroll-behavior: smooth;
 }
 
@@ -19,3 +20,24 @@ html {
   }
 }
 
+p,
+h1, h2, h3, h4, h5, h6 {
+  text-align: justify;
+}
+
+#header-placeholder {
+  min-height: 6rem;
+}
+
+@media (min-width: 1024px) {
+  #header-placeholder {
+    min-height: 4rem;
+  }
+}
+
+/* Ẩn nút mũi tên / nút tròn ở cuối header (không dùng hamburger tạm thời) */
+header button,
+header .rounded-full,
+header [class*="rounded-full"] {
+  display: none !important;
+}
