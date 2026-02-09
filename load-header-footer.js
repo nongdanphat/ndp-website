@@ -129,26 +129,26 @@ function loadFooter() {
 
           <!-- Contact -->
           <div class="text-center md:text-left" style="display: block !important; visibility: visible !important">
-            <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
+            <h3 class="text-lg font-semibold mb-4 text-gray-900 text-left" style="display: block !important">
               Chủ thể chịu trách nhiệm
             </h3>
             <div class="space-y-3" style="display: block !important">
-              <div class="flex items-center justify-center md:justify-start gap-1">
-                <p class="text-gray-600 text-base font-semibold mb-1">Tên dự án:</p>
-                <p class="text-gray-700 text-base">Nông Dân Phát</p>
+              <div class="flex items-center justify-start gap-1">
+                <p class="text-gray-600 text-base font-semibold text-left">Tên dự án:</p>
+                <p class="text-gray-700 text-base text-left">Nông Dân Phát</p>
               </div>
-              <div class="flex items-center justify-center md:justify-start gap-3">
+              <div class="flex items-center justify-start gap-3">
                 <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span class="text-gray-600 text-base">info@ndphat.vn</span>
               </div>
-              <div class="flex items-center justify-center md:justify-start gap-3">
+              <div class="flex items-center justify-start gap-3">
                 <svg class="w-5 h-5 text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span class="text-gray-600 text-base">Số 546, Thôn Minh Hòa, Xã Hàm Thuận Nam, Tỉnh Lâm Đồng, Việt Nam</span>
+                <span class="text-gray-600 text-base text-left">Số 546, Thôn Minh Hòa, Xã Hàm Thuận Nam, Tỉnh Lâm Đồng, Việt Nam</span>
               </div>
             </div>
           </div>
@@ -176,39 +176,39 @@ function loadFooter() {
             <h3 class="text-lg font-semibold mb-4 text-gray-900" style="display: block !important">
               Liên kết nhanh
             </h3>
-            <div class="space-y-3" style="display: block !important">
+            <div class="flex flex-wrap gap-x-4 gap-y-3 md:flex-col md:gap-x-0 md:gap-y-3 md:justify-start" style="display: flex !important">
               <div>
-                <a href="/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Trang chủ
                 </a>
               </div>
               <div>
-                <a href="/insights/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/insights/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Chia sẻ
                 </a>
               </div>
               <div>
-                <a href="/campaigns/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/campaigns/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Chiến dịch
                 </a>
               </div>
               <div>
-                <a href="/join-us/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/join-us/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Tuyển dụng
                 </a>
               </div>
               <div>
-                <a href="/contact/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/contact/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Liên hệ
                 </a>
               </div>
               <div>
-                <a href="/chinh-sach-bao-mat.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/chinh-sach-bao-mat.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Chính sách bảo mật
                 </a>
               </div>
               <div>
-                <a href="/dieu-khoan-su-dung.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block">
+                <a href="/dieu-khoan-su-dung.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Điều khoản sử dụng
                 </a>
               </div>
