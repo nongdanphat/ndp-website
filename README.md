@@ -24,9 +24,9 @@ ndp-website/
 │   └── *.html                  # Các bài viết chi tiết
 ├── join-us/                    # Trang tuyển dụng
 │   ├── index.html
-│   ├── full-time/              # Việc làm full-time
+│   ├── core/              # Việc làm core
 │   ├── internship/             # Chương trình thực tập
-│   └── partners/               # Đối tác
+│   └── operations/               # Đối tác
 └── assets/                     # Tài nguyên tĩnh
     ├── fonts/                  # Font Inter
     ├── icons/                  # Icon mạng xã hội
