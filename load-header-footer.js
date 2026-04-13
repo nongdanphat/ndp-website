@@ -193,11 +193,6 @@ function loadFooter() {
                 </a>
               </div>
               <div>
-                <a href="/join-us/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
-                  Tuyển dụng
-                </a>
-              </div>
-              <div>
                 <a href="/contact/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Liên hệ
                 </a>
