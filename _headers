@@ -1,0 +1,6 @@
+# Cloudflare Pages (Netlify-compatible _headers)
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/danh-thiep/*.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: inline
