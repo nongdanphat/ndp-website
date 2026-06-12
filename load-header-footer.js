@@ -183,6 +183,11 @@ function loadFooter() {
                 </a>
               </div>
               <div>
+                <a href="/vi-sao/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
+                  Vì sao?
+                </a>
+              </div>
+              <div>
                 <a href="/insights/index.html" class="text-gray-600 text-base hover:text-[#AB7E31] transition block underline">
                   Chia sẻ
                 </a>
@@ -418,6 +423,7 @@ function highlightActiveMenuItem() {
   // Map URL patterns to menu keys (excluding index - it's the default)
   const urlToKeyMap = [
     { key: 'join-us', patterns: ['join-us', 'apply'] },
+    { key: 'vi-sao', patterns: ['vi-sao'] },
     { key: 'insights', patterns: ['insights'] },
     { key: 'campaigns', patterns: ['campaigns'] },
     { key: 'contact', patterns: ['contact', 'lien-he'] }
